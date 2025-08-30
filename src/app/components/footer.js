@@ -124,7 +124,7 @@ const Footer = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
                 <Link
-                  href="/about"
+                  href="/feedback"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
                 >
                   <span className="flex items-center gap-1">
