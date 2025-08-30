@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const baseUrl = "https://freeonlinetextcomparetool.com"; 
 
-  // Example pages, you can generate dynamically from your data
   const pages = ["", "compare-file","compare-images", "about", "feedback", "privacy-policy"];
 
   const urls = pages
