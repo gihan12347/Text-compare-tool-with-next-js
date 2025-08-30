@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Sparkles, X, Zap, Eye, FileText, Heart } from "lucide-react";
+import { Sparkles, Zap, Eye, FileText, Heart } from "lucide-react";
 import { Step, FeatureCard } from "./sub-component.js";
 
 export default function AboutSection() {

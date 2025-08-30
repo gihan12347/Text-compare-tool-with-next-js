@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   ModalContent,
@@ -7,7 +7,7 @@ import {
   ModalFooter,
   Button,
 } from "@heroui/react";
-import { Info, MessageSquare, X, Check, AlertTriangle, Sparkles, FileText, Eye, Zap, Heart } from 'lucide-react';
+import { MessageSquare, X, Check, AlertTriangle, Heart } from 'lucide-react';
 
 const AlertBanner = ({ title, color = "warning", onClose }) => {
   const [isVisible, setIsVisible] = useState(true);
