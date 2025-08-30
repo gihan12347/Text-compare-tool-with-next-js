@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronUp, ExternalLink } from "lucide-react";
-import { AboutModal, FeedbackModal } from "./all-modals";
 
 const AcmeLogo = () => {
   return (
@@ -26,30 +25,11 @@ const AcmeLogo = () => {
   );
 };
 
-const useDisclosure = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  return {
-    isOpen,
-    onOpen: () => setIsOpen(true),
-    onOpenChange: setIsOpen,
-  };
-};
+
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Manage modal states
-  const {
-    isOpen: isAboutModalOpen,
-    onOpen: onOpenAboutModal,
-    onOpenChange: onOpenAboutModalChange,
-  } = useDisclosure();
-
-  const {
-    isOpen: isFeedBackModalOpen,
-    onOpen: onOpenFeedbackModal,
-    onOpenChange: onOpenFeedbackModalChange,
-  } = useDisclosure();
 
   // Handle scroll-to-top visibility
   useEffect(() => {
@@ -130,29 +110,32 @@ const Footer = () => {
                   </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
-
-                <button
-                  onClick={onOpenAboutModal}
+                <Link
+                  href="/about"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                  aria-label="Open About Modal"
                 >
-                  <span>About</span>
+                  <span className="flex items-center gap-1">
+                    About
+                    <ExternalLink
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </button>
-                <AboutModal
-                  isOpen={isAboutModalOpen}
-                  onOpenChange={onOpenAboutModalChange}
-                />
-
-                <button
-                  onClick={onOpenFeedbackModal}
+                </Link>
+                <Link
+                  href="/about"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                  aria-label="Open Feedback Modal"
                 >
-                  <span>Feedback</span>
+                  <span className="flex items-center gap-1">
+                    Feedback
+                    <ExternalLink
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </button>
-
+                </Link>
                 <Link
                   href="/privacy-policy"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
@@ -179,16 +162,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Modals */}
-        <AboutModal
-          isOpen={isAboutModalOpen}
-          onOpenChange={onOpenAboutModalChange}
-        />
-        <FeedbackModal
-          isOpen={isFeedBackModalOpen}
-          onOpenChange={onOpenFeedbackModalChange}
-        />
       </footer>
     </>
   );

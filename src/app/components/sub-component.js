@@ -40,7 +40,7 @@ const AlertBanner = ({ title, color = "warning", onClose }) => {
   );
 };
 
-const FeatureCard = ({ icon: Icon, title, description, color = "blue" }) => {
+export const FeatureCard = ({ icon: Icon, title, description, color = "blue" }) => {
   const colorClasses = {
     blue: "bg-blue-50 border-blue-200 text-blue-800",
     green: "bg-green-50 border-green-200 text-green-800",
@@ -66,7 +66,7 @@ const FeatureCard = ({ icon: Icon, title, description, color = "blue" }) => {
   );
 };
 
-const Step = ({ number, title, description, isActive = false }) => (
+export const Step = ({ number, title, description, isActive = false }) => (
   <div className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-300 ${
     isActive ? 'bg-blue-50 border border-blue-200' : 'hover:bg-gray-50'
   }`}>
@@ -84,118 +84,6 @@ const Step = ({ number, title, description, isActive = false }) => (
   </div>
 );
 
-export const AboutModal = ({ isOpen, onOpenChange }) => {
-  const [activeStep, setActiveStep] = useState(0);
-  useEffect(() => {
-    if (isOpen) {
-      const interval = setInterval(() => setActiveStep(prev => (prev + 1) % 3), 3000);
-      return () => clearInterval(interval);
-    }
-  }, [isOpen]);
-  const steps = [
-    { title: "Paste Your Texts", description: "Add your original text on the left and the modified version on the right side" },
-    { title: "Compare Analysis", description: "Click the Compare button to analyze differences between your texts" },
-    { title: "Review Results", description: "See highlighted changes with red for deletions and green for additions" }
-  ];
-  return (
-    <Modal 
-      isOpen={isOpen} 
-      placement="center" 
-      onOpenChange={onOpenChange}
-      size="2xl"
-      classNames={{
-        backdrop: "bg-black/60 backdrop-blur-md",
-        base: "border-0 shadow-2xl max-w-2xl mx-4",
-        body: "p-0",
-        header: "p-0",
-        footer: "p-0"
-      }}
-    >
-      <ModalContent className="overflow-hidden">
-        {(onClose) => (
-          <>
-            <ModalHeader className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800"></div>
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=\'60\'%20height=\'60\'%20viewBox=\'0%200%2060%2060\'%20xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg%20fill=\'none\'%20fill-rule=\'evenodd\'%3E%3Cg%20fill=\'%23ffffff\'%20fill-opacity=\'0.05\'%3E%3Cpath%20d=\'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
-              <div className="relative p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                      <Info className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h2 className="text-2xl font-bold text-white">Text Compare Tool</h2>
-                      <p className="text-blue-100 text-sm mt-1 flex items-center gap-1">
-                        <Sparkles className="w-4 h-4" />
-                        Master the art of text comparison
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={onClose}
-                    className="p-2 rounded-xl hover:bg-white/10 transition-all duration-200 border border-white/20 backdrop-blur-sm"
-                  >
-                    <X className="w-5 h-5 text-white" />
-                  </button>
-                </div>
-              </div>
-            </ModalHeader>
-            <ModalBody className="p-6 space-y-6">
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6">
-                <h3 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
-                  <Zap className="w-5 h-5" />
-                  Quick Start Guide
-                </h3>
-                <div className="space-y-3">
-                  {steps.map((step, idx) => (
-                    <Step key={idx} number={idx + 1} {...step} isActive={activeStep === idx} />
-                  ))}
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FeatureCard icon={Eye} title="Visual Highlights" description="Red highlights show deleted text, green shows additions" color="red" />
-                <FeatureCard icon={FileText} title="Smart Analysis" description="Advanced algorithm detects even subtle changes" color="green" />
-                <FeatureCard icon={Zap} title="Instant Results" description="Get comparison results in milliseconds" color="purple" />
-                <FeatureCard icon={Sparkles} title="Clean Interface" description="Use Clean button to reset both text fields" color="blue" />
-              </div>
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6">
-                <h3 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
-                  <Heart className="w-5 h-5" />
-                  Pro Tips
-                </h3>
-                <div className="space-y-2 text-sm text-amber-800">
-                  {[
-                    "For best results, ensure both texts are properly formatted",
-                    "The tool works great with any text length - from sentences to documents",
-                    "Results are processed locally - your data stays private",
-                  ].map((tip, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-amber-600 rounded-full mt-2"></div>
-                      <span>{tip}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ModalBody>
-            <ModalFooter className="bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200 p-6">
-              <div className="flex items-center justify-between w-full">
-                <div className="text-sm text-gray-600">Ready to compare your texts?</div>
-                <Button
-                  color="primary"
-                  variant="solid"
-                  onPress={onClose}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  Let&apos;s Start!
-                </Button>
-              </div>
-            </ModalFooter>
-          </>
-        )}
-      </ModalContent>
-    </Modal>
-  );
-};
 
 export const FeedbackModal = ({ isOpen, onOpenChange }) => {
   const [feedback, setFeedback] = useState('');
