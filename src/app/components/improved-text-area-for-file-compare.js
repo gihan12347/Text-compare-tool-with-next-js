@@ -54,7 +54,7 @@ const ImprovedTextareaUIForFile = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [diffMap, setDiffMap] = useState({ text1: [], text2: [] });
-  const [isAlertVisible, setIsAlertVisible] = useState(false);
+  // const [isAlertVisible, setIsAlertVisible] = useState(false);
 
   const resultRef = useRef(null);
 
@@ -77,11 +77,11 @@ const ImprovedTextareaUIForFile = () => {
 
   const compareTexts = async () => {
     if (!text1.trim() || !text2.trim()) {
-      setIsAlertVisible(true);
+      // setIsAlertVisible(true);
       return;
     }
 
-    setIsAlertVisible(false);
+    // setIsAlertVisible(false);
     setIsLoading(true);
     try {
       const res = await axios.post(
@@ -100,7 +100,7 @@ const ImprovedTextareaUIForFile = () => {
   const cleanText = () => {
     setText1("");
     setText2("");
-    setIsAlertVisible(false);
+    // setIsAlertVisible(false);
     setIsVisible(false);
     setDiffMap({ text1: [], text2: [] });
   };

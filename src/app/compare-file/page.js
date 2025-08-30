@@ -1,6 +1,6 @@
 "use client"; 
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import NavigationBar from "../components/navbar.js";
 import Footer from "../components/footer.js";
 import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file-compare.js";

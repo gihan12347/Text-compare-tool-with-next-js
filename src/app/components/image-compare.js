@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
+import Image from "next/image";
 import { Upload, Image as ImageIcon } from "lucide-react";
 
 const ImageCompareComponent = () => {
@@ -28,6 +29,7 @@ const ImageCompareComponent = () => {
     const size = 256;
     canvas.width = size;
     canvas.height = size;
+
     const run = async () => {
       const tensorFromImage = (img) =>
         tf.browser
@@ -38,15 +40,18 @@ const ImageCompareComponent = () => {
           .expandDims();
       const t1 = tensorFromImage(img1);
       const t2 = tensorFromImage(img2);
+
       for (let alpha = 0; alpha <= 1.0; alpha += 0.05) {
         const blended = tf.add(tf.mul(t1, 1 - alpha), tf.mul(t2, alpha));
         const clipped = blended.squeeze();
         await tf.browser.toPixels(clipped, canvas);
         await new Promise((r) => setTimeout(r, 200));
       }
+
       t1.dispose();
       t2.dispose();
     };
+
     run();
   }, [img1, img2]);
 
@@ -69,7 +74,7 @@ const ImageCompareComponent = () => {
                   <p className="text-gray-500 text-sm mb-6">
                     Choose the starting image for your morph
                   </p>
-                  
+
                   <label className="cursor-pointer group">
                     <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded-xl font-medium transition-all duration-200 transform group-hover:scale-105 shadow-lg">
                       <Upload className="w-5 h-5" />
@@ -87,7 +92,7 @@ const ImageCompareComponent = () => {
                       }}
                     />
                   </label>
-                  
+
                   {img1Url && (
                     <div className="mt-4">
                       <div className="inline-flex items-center gap-2 text-green-600 text-sm font-medium">
@@ -113,7 +118,7 @@ const ImageCompareComponent = () => {
                   <p className="text-gray-500 text-sm mb-6">
                     Choose the ending image for your morph
                   </p>
-                  
+
                   <label className="cursor-pointer group">
                     <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white rounded-xl font-medium transition-all duration-200 transform group-hover:scale-105 shadow-lg">
                       <Upload className="w-5 h-5" />
@@ -131,7 +136,7 @@ const ImageCompareComponent = () => {
                       }}
                     />
                   </label>
-                  
+
                   {img2Url && (
                     <div className="mt-4">
                       <div className="inline-flex items-center gap-2 text-green-600 text-sm font-medium">
@@ -159,7 +164,7 @@ const ImageCompareComponent = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="p-8">
               <div className="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
                 {/* Image 1 Display */}
@@ -167,9 +172,11 @@ const ImageCompareComponent = () => {
                   <div className="relative">
                     <div className="w-64 h-64 rounded-2xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                       {img1Url ? (
-                        <img
+                        <Image
                           src={img1Url}
                           alt="Input 1"
+                          width={256}
+                          height={256}
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       ) : (
@@ -196,7 +203,7 @@ const ImageCompareComponent = () => {
                       <canvas
                         ref={canvasRef}
                         className="w-full h-full object-cover rounded-2xl"
-                        style={{ imageRendering: 'pixelated' }}
+                        style={{ imageRendering: "pixelated" }}
                       />
                     </div>
                     <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
@@ -221,9 +228,11 @@ const ImageCompareComponent = () => {
                   <div className="relative">
                     <div className="w-64 h-64 rounded-2xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                       {img2Url ? (
-                        <img
+                        <Image
                           src={img2Url}
                           alt="Input 2"
+                          width={256}
+                          height={256}
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       ) : (

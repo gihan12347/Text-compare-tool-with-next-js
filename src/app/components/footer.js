@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { ChevronUp, ExternalLink } from "lucide-react";
-import {AboutModal, FeedbackModal} from "./all-modals";
+import { AboutModal, FeedbackModal } from "./all-modals";
 
 const AcmeLogo = () => {
   return (
@@ -83,16 +84,15 @@ const Footer = () => {
         className="bg-gradient-to-t from-black via-gray-900 to-black border-t border-gray-800 relative overflow-hidden"
         role="contentinfo"
       >
-        {/* Subtle background decoration */}
+        {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/5 via-transparent to-purple-900/5"></div>
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 py-8">
-          {/* Main Footer Content */}
           <div className="flex flex-col items-center gap-6">
-            {/* Logo and Brand Section */}
+            {/* Logo and brand */}
             <div className="flex flex-col items-center gap-3">
-              <a
+              <Link
                 href="/"
                 aria-label="Go to homepage"
                 className="group transition-all duration-300 hover:scale-105"
@@ -101,10 +101,9 @@ const Footer = () => {
                   <div className="h-12 w-12 flex items-center justify-center">
                     <AcmeLogo />
                   </div>
-                  {/* Glow effect */}
                   <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                 </div>
-              </a>
+              </Link>
               <div className="text-center">
                 <h3 className="font-bold text-white text-lg bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Text Compare Tool
@@ -115,10 +114,10 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Navigation Links */}
+            {/* Navigation links */}
             <nav aria-label="Footer navigation" className="w-full">
               <div className="flex flex-wrap justify-center gap-6 text-sm">
-                <a
+                <Link
                   href="/"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
                 >
@@ -130,7 +129,7 @@ const Footer = () => {
                     />
                   </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                </Link>
 
                 <button
                   onClick={onOpenAboutModal}
@@ -154,7 +153,7 @@ const Footer = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </button>
 
-                <a
+                <Link
                   href="/privacy-policy"
                   className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
                 >
@@ -166,14 +165,12 @@ const Footer = () => {
                     />
                   </span>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                </Link>
               </div>
             </nav>
 
-            {/* Separator */}
             <div className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
-            {/* Copyright Section */}
             <div className="text-center space-y-2">
               <p className="text-xs text-gray-500">
                 &copy; {new Date().getFullYear()} All rights reserved - Gihan

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FileText, Upload, Image } from "lucide-react";
+import Link from "next/link";
 
 export const AcmeLogo = () => {
   return (
@@ -76,7 +77,7 @@ const NavigationBar = ({selectedType}) => {
           <div className="flex items-center justify-between h-16">
             {/* Logo and Brand */}
             <div className="flex items-center">
-              <a
+              <Link
                 href="/"
                 className="flex items-center gap-3 group transition-all duration-300 hover:scale-105"
                 aria-label="Go to homepage"
@@ -93,7 +94,7 @@ const NavigationBar = ({selectedType}) => {
                     Compare text with precision
                   </p>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Navigation buttons */}

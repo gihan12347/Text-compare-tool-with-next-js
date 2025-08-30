@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
 
       <h2 className="text-2xl font-semibold mt-8 mb-2">5. Data Security</h2>
       <p className="mb-6">
-        As no data is sent to a server, your input remains entirely within your control. Always close your browser or clear text after use if you're handling sensitive content.
+        As no data is sent to a server, your input remains entirely within your control. Always close your browser or clear text after use if you&apos;re handling sensitive content.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-2">6. Changes to This Policy</h2>

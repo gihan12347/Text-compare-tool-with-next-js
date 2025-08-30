@@ -1,6 +1,6 @@
 "use client"; // only needed if you are in Next.js 13+ App Router
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import NavigationBar from "./components/navbar.js";
 import Footer from "./components/footer.js";
 import ImprovedTextareaUI from "./components/improved-text-area.js";
