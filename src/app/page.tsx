@@ -1,4 +1,4 @@
-"use client"; // only needed if you are in Next.js 13+ App Router
+"use client"; 
 
 import React, { useRef } from "react";
 import NavigationBar from "./components/navbar.js";

@@ -90,9 +90,9 @@ const NavigationBar = ({selectedType}) => {
                   <h1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     TextCompare
                   </h1>
-                  <p className="text-xs text-gray-400 hidden sm:block">
+                  <h6 className="text-xs text-gray-400 hidden sm:block">
                     Compare text with precision
-                  </p>
+                  </h6>
                 </div>
               </Link>
             </div>
