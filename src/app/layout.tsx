@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { ReactNode } from "react";
+import Script from "next/script";
 
 export const metadata = {
   title: "Online Text Comparison Tool | Compare Text Fast",
@@ -44,6 +45,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-L39W9XFW1S"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L39W9XFW1S', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
         {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
