@@ -86,7 +86,7 @@ const Footer = () => {
               </Link>
               <div className="text-center">
                 <h3 className="font-bold text-white text-lg bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Text Compare Tool
+                  Free Online Text Compare Tool
                 </h3>
                 <p className="text-sm text-gray-400 mt-1">
                   Compare text with precision and ease
