@@ -2,7 +2,7 @@ import "./globals.css";
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Free Online Text Compare Tool | Compare & Find Text Differences",
+  title: "Online Text Comparison Tool | Compare Text Fast",
   description:
     "Use our free online text compare tool to quickly find and highlight differences between two texts. Fast, free, and accurate text comparison online.",
   keywords:
