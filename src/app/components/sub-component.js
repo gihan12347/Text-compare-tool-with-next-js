@@ -9,7 +9,7 @@ import {
 } from "@heroui/react";
 import { MessageSquare, X, Check, AlertTriangle, Heart } from 'lucide-react';
 
-const AlertBanner = ({ title, color = "warning", onClose }) => {
+export const AlertBanner = ({ title, color = "warning", onClose }) => {
   const [isVisible, setIsVisible] = useState(true);
   const colorClasses = {
     warning: "bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 text-amber-800",
