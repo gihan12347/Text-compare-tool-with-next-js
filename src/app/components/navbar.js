@@ -72,9 +72,9 @@ const NavigationBar = ({ selectedType }) => {
               <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
             <div>
-              <H1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Free Online Text Compare Tool
-              </H1>
+              </h1>
               <p className="text-xs text-gray-400 hidden sm:block">
                 Compare text, files & images with precision
               </p>
