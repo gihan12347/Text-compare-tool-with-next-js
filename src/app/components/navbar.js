@@ -29,81 +29,99 @@ const NavigationBar = ({ selectedType }) => {
   const [activeButton, setActiveButton] = useState(selectedType);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const buttons = [
-    { id: "text", label: "Text", icon: FileText, description: "Compare text directly", href: "/" },
-    { id: "file", label: "File", icon: Upload, description: "Upload and compare files", href: "/compare-file" },
-    { id: "images", label: "Images", icon: Image, description: "Compare image content", href: "/compare-images" },
+  const links = [
+    {
+      id: "text",
+      label: "Text Compare",
+      icon: FileText,
+      description: "Compare and find differences between two text snippets.",
+      href: "/",
+    },
+    {
+      id: "file",
+      label: "File Compare",
+      icon: Upload,
+      description: "Upload and compare documents or code files.",
+      href: "/compare-file",
+    },
+    {
+      id: "images",
+      label: "Image Compare",
+      icon: Image,
+      description: "Spot differences between two images instantly.",
+      href: "/compare-images",
+    },
   ];
 
-  const handleButtonClick = (buttonId, href) => {
-    setActiveButton(buttonId);
-    setMobileOpen(false); // close menu on mobile
-    window.location.href = href;
-  };
-
   return (
-    <nav className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-sm relative">
+    <nav
+      className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-sm relative"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo and Brand */}
+          {/* Logo + Brand */}
           <Link
             href="/"
             className="flex items-center gap-3 group transition-all duration-300 hover:scale-105"
-            aria-label="Go to homepage"
+            aria-label="Go to homepage - Free Online Text Compare Tool"
           >
             <div className="relative">
               <AcmeLogo />
               <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
             <div>
-              <h1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Free Online Text Compare
-              </h1>
-              <h6 className="text-xs text-gray-400 hidden sm:block">
-                Compare text with precision
-              </h6>
+              <span className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Free Online Text Compare Tool
+              </span>
+              <p className="text-xs text-gray-400 hidden sm:block">
+                Compare text, files & images with precision
+              </p>
             </div>
           </Link>
 
-          {/* Desktop buttons */}
-          <div className="hidden sm:flex items-center space-x-2 sm:space-x-4">
-            {buttons.map((button) => {
-              const Icon = button.icon;
-              const isActive = activeButton === button.id;
+          {/* Desktop Menu */}
+          <ul className="hidden sm:flex items-center space-x-4" role="menubar">
+            {links.map((link) => {
+              const Icon = link.icon;
+              const isActive = activeButton === link.id;
               return (
-                <button
-                  key={button.id}
-                  onClick={() => handleButtonClick(button.id, button.href)}
-                  className={`
-                    group relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg
-                    font-medium text-sm transition-all duration-300 ease-in-out
-                    border border-transparent backdrop-blur-sm
-                    ${
-                      isActive
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-blue-500/50 shadow-lg shadow-blue-500/25"
-                        : "text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-700 hover:border-gray-600/50"
-                    }
-                    transform hover:scale-105 active:scale-95
-                  `}
-                  aria-label={button.description}
-                  title={button.description}
-                >
-                  <Icon
-                    className={`w-4 h-4 transition-all duration-300 ${
-                      isActive ? "text-white" : "text-gray-400 group-hover:text-white"
-                    } group-hover:scale-110`}
-                  />
-                  <span className="hidden sm:inline-block relative z-10">{button.label}</span>
-                </button>
+                <li key={link.id} role="none">
+                  <Link
+                    href={link.href}
+                    role="menuitem"
+                    title={link.description}
+                    aria-label={link.description}
+                    className={`
+                      group relative flex items-center gap-2 px-3 py-2 rounded-lg
+                      font-medium text-sm transition-all duration-300 ease-in-out
+                      ${
+                        isActive
+                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                          : "text-gray-300 hover:text-white hover:bg-gray-800"
+                      }
+                    `}
+                    onClick={() => setActiveButton(link.id)}
+                  >
+                    <Icon
+                      className={`w-4 h-4 transition-all duration-300 ${
+                        isActive ? "text-white" : "text-gray-400 group-hover:text-white"
+                      }`}
+                    />
+                    {link.label}
+                  </Link>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
-          {/* Mobile burger menu */}
+          {/* Mobile Toggle */}
           <div className="sm:hidden">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none"
+              aria-label="Toggle mobile menu"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -111,34 +129,52 @@ const NavigationBar = ({ selectedType }) => {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="sm:hidden bg-black border-t border-gray-800">
-          <div className="px-2 py-3 space-y-1">
-            {buttons.map((button) => {
-              const Icon = button.icon;
-              const isActive = activeButton === button.id;
+          <ul className="px-2 py-3 space-y-1" role="menu">
+            {links.map((link) => {
+              const Icon = link.icon;
+              const isActive = activeButton === link.id;
               return (
-                <button
-                  key={button.id}
-                  onClick={() => handleButtonClick(button.id, button.href)}
-                  className={`flex items-center w-full px-3 py-2 rounded-md text-left text-sm font-medium ${
-                    isActive
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
-                  }`}
-                >
-                  <Icon className="w-4 h-4 mr-2" />
-                  {button.label}
-                </button>
+                <li key={link.id} role="none">
+                  <Link
+                    href={link.href}
+                    role="menuitem"
+                    title={link.description}
+                    aria-label={link.description}
+                    className={`flex items-center w-full px-3 py-2 rounded-md text-sm font-medium ${
+                      isActive
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    }`}
+                    onClick={() => setActiveButton(link.id)}
+                  >
+                    <Icon className="w-4 h-4 mr-2" />
+                    {link.label}
+                  </Link>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       )}
 
-      {/* Bottom border */}
+      {/* Decorative Line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-50"></div>
+
+      {/* Schema.org JSON-LD for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            name: links.map((l) => l.label),
+            url: links.map((l) => `https://yourwebsite.com${l.href}`),
+          }),
+        }}
+      />
     </nav>
   );
 };

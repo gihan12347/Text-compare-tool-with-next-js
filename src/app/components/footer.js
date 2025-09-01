@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronUp, ExternalLink } from "lucide-react";
+import { ChevronUp, ExternalLink, Code, FileText, Image, Users, Shield, Heart } from "lucide-react";
 
 const AcmeLogo = () => {
   return (
     <svg
       fill="none"
-      height="36"
-      width="36"
+      height="40"
+      width="40"
       viewBox="0 0 32 32"
       className="text-white transition-transform duration-300 hover:scale-110"
-      aria-label="Acme Logo"
+      aria-label="Text Compare Tool Logo"
       role="img"
     >
-      <title>Acme Logo</title>
-      <desc>Logo for Online Text Compare Tool</desc>
+      <title>Text Compare Tool Logo</title>
+      <desc>Free Online Text, File & Image Comparison Tool</desc>
       <path
         clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H168453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
         fill="currentColor"
         fillRule="evenodd"
       />
@@ -25,17 +25,11 @@ const AcmeLogo = () => {
   );
 };
 
-
-
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-
-  // Handle scroll-to-top visibility
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 300);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -44,125 +38,173 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const features = [
+    { icon: FileText, text: "Text Comparison" },
+    { icon: Code, text: "Code Analysis" },
+    { icon: Image, text: "Image Diff" },
+    { icon: Shield, text: "Privacy First" }
+  ];
+
   return (
     <>
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 group"
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 backdrop-blur-sm border border-white/20"
           aria-label="Scroll to top"
         >
-          <ChevronUp
-            size={20}
-            className="group-hover:-translate-y-0.5 transition-transform duration-200"
-          />
+          <ChevronUp size={20} />
         </button>
       )}
 
       <footer
-        className="bg-gradient-to-t from-black via-gray-900 to-black border-t border-gray-800 relative overflow-hidden"
+        className="bg-gradient-to-b from-gray-900 via-black to-gray-900 border-t border-gray-700/50 relative overflow-hidden text-gray-300"
         role="contentinfo"
       >
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/5 via-transparent to-purple-900/5"></div>
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col items-center gap-6">
-            {/* Logo and brand */}
-            <div className="flex flex-col items-center gap-3">
-              <Link
-                href="/"
-                aria-label="Go to homepage"
-                className="group transition-all duration-300 hover:scale-105"
-              >
-                <div className="relative">
-                  <div className="h-12 w-12 flex items-center justify-center">
-                    <AcmeLogo />
-                  </div>
-                  <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            
+            {/* Brand Section */}
+            <div className="lg:col-span-2">
+              <Link href="/" aria-label="Go to homepage">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-6 group">
+                  <AcmeLogo />
+                  <span className="text-white font-bold text-xl group-hover:text-blue-400 transition-colors duration-300">
+                    Text Compare Tool
+                  </span>
                 </div>
               </Link>
-              <div className="text-center">
-                <h3 className="font-bold text-white text-lg bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Free Online Text Compare Tool
-                </h3>
-                <p className="text-sm text-gray-400 mt-1">
-                  Compare text with precision and ease
-                </p>
+              
+              <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+                The most advanced free online comparison tool for <strong className="text-white">text, files, and images</strong>. 
+                Trusted by developers, writers, and professionals worldwide for accurate difference detection.
+              </p>
+
+              {/* Feature Icons */}
+              <div className="grid grid-cols-2 gap-3">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                    <feature.icon size={16} className="text-blue-500" />
+                    <span>{feature.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Navigation links */}
-            <nav aria-label="Footer navigation" className="w-full">
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
-                <Link
-                  href="/"
-                  className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                >
-                  <span className="flex items-center gap-1">
-                    Home
-                    <ExternalLink
-                      size={12}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                    />
-                  </span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                >
-                  <span className="flex items-center gap-1">
-                    About
-                    <ExternalLink
-                      size={12}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                    />
-                  </span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-                <Link
-                  href="/feedback"
-                  className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                >
-                  <span className="flex items-center gap-1">
-                    Feedback
-                    <ExternalLink
-                      size={12}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                    />
-                  </span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-                <Link
-                  href="/privacy-policy"
-                  className="text-blue-400 hover:text-blue-300 transition-all duration-300 hover:scale-105 relative group"
-                >
-                  <span className="flex items-center gap-1">
-                    Privacy Policy
-                    <ExternalLink
-                      size={12}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                    />
-                  </span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              </div>
+            {/* Navigation */}
+            <nav aria-label="Footer navigation" className="text-center md:text-left">
+              <h4 className="text-white font-semibold mb-4 text-lg">Quick Links</h4>
+              <ul className="space-y-3">
+                {[
+                  { href: "/compare-text", label: "Compare Text" },
+                  { href: "/compare-file", label: "Compare File" },
+                 { href: "/compare-image", label: "Compare Images" }, 
+                  { href: "/about", label: "About Us" },
+                  { href: "/feedback", label: "Feedback" },
+                  { href: "/privacy-policy", label: "Privacy Policy" }
+                ].map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:underline underline-offset-4"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
 
-            <div className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-
-            <div className="text-center space-y-2">
-              <p className="text-xs text-gray-500">
-                &copy; {new Date().getFullYear()} All rights reserved - Gihan
-                Kadawathage
-              </p>
+            {/* Features & Benefits */}
+            <div className="text-center md:text-left">
+              <h4 className="text-white font-semibold mb-4 text-lg">Why Choose Us?</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400">Lightning-fast comparison algorithms</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400">100% free with no registration required</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400">Works on all devices and browsers</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400">Your data never leaves your device</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Elegant Divider */}
+          <div className="relative my-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-700/50"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-16 h-0.5 rounded-full"></div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-gray-500 flex items-center gap-1">
+              &copy; {new Date().getFullYear()} Text Compare Tool - Gihan Kadawathage. 
+              <span className="hidden sm:inline">All rights reserved.</span>
+            </div>
+            
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-gray-500">Made with</span>
+              <Heart size={14} className="text-red-500 animate-pulse" />
+              <span className="text-gray-500">for developers</span>
+            </div>
+          </div>
+
+          {/* Mobile-specific bottom spacing */}
+          <div className="h-4 sm:h-0"></div>
         </div>
+
+        {/* Subtle bottom glow */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
       </footer>
+
+      {/* Enhanced Schema Markup for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Text Compare Tool",
+            description:
+              "Free online text, file, and image comparison tool for developers, writers, and students. Fast, accurate, and privacy-focused.",
+            applicationCategory: "Utility",
+            operatingSystem: "Web",
+            url: "https://yourwebsite.com",
+            author: {
+              "@type": "Person",
+              name: "Gihan Kadawathage"
+            },
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD"
+            }
+          }),
+        }}
+      />
     </>
   );
 };
