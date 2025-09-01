@@ -66,11 +66,11 @@ const ImprovedTextareaUI = () => {
   const compareTexts = async () => {
     console.log("Comparing texts...");
     if (!text1.trim() || !text2.trim()) {
-      setIsAlertVisible(true);
+      // setIsAlertVisible(true);
       return;
     }
 
-    setIsAlertVisible(false);
+    // setIsAlertVisible(false);
     setIsLoading(true);
     try {
       const res = await axios.post(
@@ -89,7 +89,7 @@ const ImprovedTextareaUI = () => {
   const cleanText = () => {
     setText1("");
     setText2("");
-    setIsAlertVisible(false);
+    // setIsAlertVisible(false);
     setIsVisible(false);
     setDiffMap({ text1: [], text2: [] });
   };

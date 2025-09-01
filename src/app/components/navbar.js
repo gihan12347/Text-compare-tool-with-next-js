@@ -75,6 +75,13 @@ const NavigationBar = ({ selectedType }) => {
               <h1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Free Online Text Compare Tool
               </h1>
+              <h2 className="sr-only">
+                Compare text, files, and images online with accuracy and speed
+              </h2>
+              <h3 className="sr-only">
+                Compare plain text side by side and highlight differences
+                instantly
+              </h3>
               <p className="text-xs text-gray-400 hidden sm:block">
                 Compare text, files & images with precision
               </p>
@@ -106,7 +113,9 @@ const NavigationBar = ({ selectedType }) => {
                   >
                     <Icon
                       className={`w-4 h-4 transition-all duration-300 ${
-                        isActive ? "text-white" : "text-gray-400 group-hover:text-white"
+                        isActive
+                          ? "text-white"
+                          : "text-gray-400 group-hover:text-white"
                       }`}
                     />
                     {link.label}
@@ -123,7 +132,11 @@ const NavigationBar = ({ selectedType }) => {
               className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none"
               aria-label="Toggle mobile menu"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

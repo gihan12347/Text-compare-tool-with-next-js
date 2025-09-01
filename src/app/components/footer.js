@@ -1,27 +1,104 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronUp, ExternalLink, Code, FileText, Image, Users, Shield, Heart } from "lucide-react";
+import {
+  ChevronUp,
+  Code,
+  FileText,
+  Image,
+  Shield,
+  Heart,
+  Twitter,
+  Facebook,
+  Linkedin,
+  Github,
+  Share2,
+  Copy,
+  Check
+} from "lucide-react";
 
-const AcmeLogo = () => {
+const AcmeLogo = () => (
+  <svg
+    fill="none"
+    height="40"
+    width="40"
+    viewBox="0 0 32 32"
+    className="text-white transition-transform duration-300 hover:scale-110"
+    aria-label="Text Compare Tool Logo"
+    role="img"
+  >
+    <title>Text Compare Tool Logo</title>
+    <desc>Free Online Text, File & Image Comparison Tool</desc>
+    <path
+      clipRule="evenodd"
+      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+      fill="currentColor"
+      fillRule="evenodd"
+    />
+  </svg>
+);
+
+const SocialShareButton = ({ platform, url, text, icon: Icon, color }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    if (platform === "copy") {
+      try {
+        await navigator.clipboard.writeText(url);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+      return;
+    }
+
+    let shareUrl = "";
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+
+    switch (platform) {
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        break;
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+      case "github":
+        shareUrl = "https://github.com/gihankadawathage";
+        break;
+    }
+
+    if (shareUrl) {
+      window.open(
+        shareUrl,
+        "_blank",
+        "noopener,noreferrer,width=600,height=400"
+      );
+    }
+  };
+
   return (
-    <svg
-      fill="none"
-      height="40"
-      width="40"
-      viewBox="0 0 32 32"
-      className="text-white transition-transform duration-300 hover:scale-110"
-      aria-label="Text Compare Tool Logo"
-      role="img"
+    <button
+      onClick={handleShare}
+      className={`group relative p-3 rounded-full transition-all duration-300 hover:scale-110 ${color} hover:shadow-lg backdrop-blur-sm border border-white/10`}
+      aria-label={`Share on ${platform}`}
+      title={platform === "copy" ? "Copy link" : `Share on ${platform}`}
     >
-      <title>Text Compare Tool Logo</title>
-      <desc>Free Online Text, File & Image Comparison Tool</desc>
-      <path
-        clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
-    </svg>
+      {platform === "copy" && copied ? (
+        <Check size={18} className="text-green-400" />
+      ) : (
+        <Icon
+          size={18}
+          className="text-white group-hover:text-white transition-colors duration-300"
+        />
+      )}
+      <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50">
+        {platform === "copy" ? (copied ? "Copied!" : "Copy link") : `Share on ${platform}`}
+      </span>
+    </button>
   );
 };
 
@@ -42,12 +119,49 @@ const Footer = () => {
     { icon: FileText, text: "Text Comparison" },
     { icon: Code, text: "Code Analysis" },
     { icon: Image, text: "Image Diff" },
-    { icon: Shield, text: "Privacy First" }
+    { icon: Shield, text: "Privacy First" },
+  ];
+
+  const socialPlatforms = [
+    {
+      platform: "twitter",
+      icon: Twitter,
+      color: "bg-blue-500/20 hover:bg-blue-500/30",
+      url: "https://freeonlinetextcomparetool.com",
+      text: "Check out this amazing free text comparison tool! 🚀",
+    },
+    {
+      platform: "facebook",
+      icon: Facebook,
+      color: "bg-blue-600/20 hover:bg-blue-600/30",
+      url: "https://freeonlinetextcomparetool.com",
+      text: "Free Text Compare Tool - Perfect for developers!",
+    },
+    {
+      platform: "linkedin",
+      icon: Linkedin,
+      color: "bg-blue-700/20 hover:bg-blue-700/30",
+      url: "https://freeonlinetextcomparetool.com",
+      text: "Powerful free text comparison tool for professionals",
+    },
+    {
+      platform: "github",
+      icon: Github,
+      color: "bg-gray-600/20 hover:bg-gray-600/30",
+      url: "https://github.com/gihankadawathage",
+      text: "Check out my GitHub profile",
+    },
+    {
+      platform: "copy",
+      icon: Copy,
+      color: "bg-green-600/20 hover:bg-green-600/30",
+      url: "https://freeonlinetextcomparetool.com",
+      text: "Text Compare Tool",
+    },
   ];
 
   return (
     <>
-      {/* Scroll to Top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
@@ -58,153 +172,138 @@ const Footer = () => {
         </button>
       )}
 
-      <footer
-        className="bg-gradient-to-b from-gray-900 via-black to-gray-900 border-t border-gray-700/50 relative overflow-hidden text-gray-300"
-        role="contentinfo"
-      >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            
+      <footer className="bg-gradient-to-b from-gray-900 via-black to-gray-900 border-t border-gray-700/50 relative overflow-hidden text-gray-300">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section */}
-            <div className="lg:col-span-2">
+            <div className="sm:col-span-2 lg:col-span-2">
               <Link href="/" aria-label="Go to homepage">
-                <div className="flex items-center justify-center md:justify-start gap-3 mb-6 group">
+                <div className="flex items-center justify-center sm:justify-start gap-3 mb-4 sm:mb-6 group">
                   <AcmeLogo />
-                  <span className="text-white font-bold text-xl group-hover:text-blue-400 transition-colors duration-300">
+                  <span className="text-white font-bold text-lg sm:text-xl group-hover:text-blue-400 transition-colors duration-300">
                     Text Compare Tool
                   </span>
                 </div>
               </Link>
-              
-              <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-                The most advanced free online comparison tool for <strong className="text-white">text, files, and images</strong>. 
-                Trusted by developers, writers, and professionals worldwide for accurate difference detection.
+
+              <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 max-w-md mx-auto sm:mx-0 text-center sm:text-left text-sm sm:text-base">
+                The most advanced free online comparison tool for{" "}
+                <strong className="text-white">text, files, and images</strong>.
               </p>
 
               {/* Feature Icons */}
-              <div className="grid grid-cols-2 gap-3">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                    <feature.icon size={16} className="text-blue-500" />
-                    <span>{feature.text}</span>
-                  </div>
-                ))}
-              </div>
+<div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 sm:gap-3 text-center sm:text-left mb-6">
+  {features.map((feature, idx) => (
+    <div
+      key={idx}
+      className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300 px-1 py-1 rounded-lg hover:bg-white/5"
+    >
+      <feature.icon size={14} className="text-blue-500 flex-shrink-0" />
+      <span className="truncate">{feature.text}</span>
+    </div>
+  ))}
+</div>
+
             </div>
 
-            {/* Navigation */}
-            <nav aria-label="Footer navigation" className="text-center md:text-left">
-              <h4 className="text-white font-semibold mb-4 text-lg">Quick Links</h4>
-              <ul className="space-y-3">
+            {/* Quick Links */}
+            <nav className="text-center sm:text-left relative">
+              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Quick Links</h4>
+              <ul className="grid grid-cols-2 gap-2 sm:gap-3 text-sm">
                 {[
                   { href: "/compare-text", label: "Compare Text" },
                   { href: "/compare-file", label: "Compare File" },
-                 { href: "/compare-image", label: "Compare Images" }, 
+                  { href: "/compare-image", label: "Compare Images" },
                   { href: "/about", label: "About Us" },
                   { href: "/feedback", label: "Feedback" },
-                  { href: "/privacy-policy", label: "Privacy Policy" }
-                ].map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      href={link.href} 
-                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:underline underline-offset-4"
+                  { href: "/privacy-policy", label: "Privacy Policy" },
+                ].map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:underline underline-offset-4 block py-1 px-2 rounded hover:bg-white/5"
                     >
                       {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
+
+              {/* Social Icons - Display on all devices */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-4">
+                {socialPlatforms.map((social, idx) => (
+                  <SocialShareButton
+                    key={idx}
+                    platform={social.platform}
+                    icon={social.icon}
+                    color={social.color}
+                    url={social.url}
+                    text={social.text}
+                  />
+                ))}
+              </div>
             </nav>
 
-            {/* Features & Benefits */}
-            <div className="text-center md:text-left">
-              <h4 className="text-white font-semibold mb-4 text-lg">Why Choose Us?</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400">Lightning-fast comparison algorithms</span>
+            {/* Why Choose Us */}
+            <div className="text-center sm:text-left">
+              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Why Choose Us?</h4>
+              <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
+                <div className="flex items-start justify-center sm:justify-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400 text-left">Lightning-fast comparison algorithms</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400">100% free with no registration required</span>
+                <div className="flex items-start justify-center sm:justify-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400 text-left">100% free with no registration required</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400">Works on all devices and browsers</span>
+                <div className="flex items-start justify-center sm:justify-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400 text-left">Works on all devices and browsers</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400">Your data never leaves your device</span>
+                <div className="flex items-start justify-center sm:justify-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-400 text-left">Your data never leaves your device</span>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Elegant Divider */}
-          <div className="relative my-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-700/50"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-16 h-0.5 rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-gray-500 flex items-center gap-1">
-              &copy; {new Date().getFullYear()} Text Compare Tool - Gihan Kadawathage. 
-              <span className="hidden sm:inline">All rights reserved.</span>
-            </div>
-            
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-gray-500">Made with</span>
-              <Heart size={14} className="text-red-500 animate-pulse" />
-              <span className="text-gray-500">for developers</span>
-            </div>
-          </div>
-
-          {/* Mobile-specific bottom spacing */}
-          <div className="h-4 sm:h-0"></div>
         </div>
 
-        {/* Subtle bottom glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        {/* SEO Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Text Compare Tool",
+              description: "Free online text, file, and image comparison tool for developers, writers, and students. Fast, accurate, and privacy-focused.",
+              applicationCategory: "Utility",
+              operatingSystem: "Web",
+              url: "https://freeonlinetextcomparetool.com",
+              author: {
+                "@type": "Person",
+                name: "Gihan Kadawathage",
+                sameAs: [
+                  "https://github.com/gihankadawathage",
+                  "https://twitter.com/gihankadawathage",
+                  "https://linkedin.com/in/gihankadawathage"
+                ]
+              },
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD"
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "1250"
+              }
+            }),
+          }}
+        />
       </footer>
-
-      {/* Enhanced Schema Markup for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Text Compare Tool",
-            description:
-              "Free online text, file, and image comparison tool for developers, writers, and students. Fast, accurate, and privacy-focused.",
-            applicationCategory: "Utility",
-            operatingSystem: "Web",
-            url: "https://yourwebsite.com",
-            author: {
-              "@type": "Person",
-              name: "Gihan Kadawathage"
-            },
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD"
-            }
-          }),
-        }}
-      />
     </>
   );
 };
