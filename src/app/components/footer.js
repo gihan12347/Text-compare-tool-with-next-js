@@ -190,7 +190,7 @@ const Footer = () => {
 
               <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 max-w-md mx-auto sm:mx-0 text-center sm:text-left text-sm sm:text-base">
                 Compare{" "}
-                <strong className="text-white">text, files, and images</strong>{" "}
+                text, files, and images{" "}
                 instantly with the most advanced free online comparison tool.
                 Highlight differences, track changes, and find similarities with
                 ease — all in one powerful, easy-to-use platform.
