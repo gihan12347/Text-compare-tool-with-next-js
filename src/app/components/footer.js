@@ -6,14 +6,12 @@ import {
   FileText,
   Image,
   Shield,
-  Heart,
   Twitter,
   Facebook,
   Linkedin,
   Github,
-  Share2,
   Copy,
-  Check
+  Check,
 } from "lucide-react";
 
 const AcmeLogo = () => (
@@ -96,7 +94,11 @@ const SocialShareButton = ({ platform, url, text, icon: Icon, color }) => {
         />
       )}
       <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50">
-        {platform === "copy" ? (copied ? "Copied!" : "Copy link") : `Share on ${platform}`}
+        {platform === "copy"
+          ? copied
+            ? "Copied!"
+            : "Copy link"
+          : `Share on ${platform}`}
       </span>
     </button>
   );
@@ -187,28 +189,35 @@ const Footer = () => {
               </Link>
 
               <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 max-w-md mx-auto sm:mx-0 text-center sm:text-left text-sm sm:text-base">
-                The most advanced free online comparison tool for{" "}
-                <strong className="text-white">text, files, and images</strong>.
+                Compare{" "}
+                <strong className="text-white">text, files, and images</strong>{" "}
+                instantly with the most advanced free online comparison tool.
+                Highlight differences, track changes, and find similarities with
+                ease — all in one powerful, easy-to-use platform.
               </p>
 
               {/* Feature Icons */}
-<div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 sm:gap-3 text-center sm:text-left mb-6">
-  {features.map((feature, idx) => (
-    <div
-      key={idx}
-      className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300 px-1 py-1 rounded-lg hover:bg-white/5"
-    >
-      <feature.icon size={14} className="text-blue-500 flex-shrink-0" />
-      <span className="truncate">{feature.text}</span>
-    </div>
-  ))}
-</div>
-
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 sm:gap-3 text-center sm:text-left mb-6">
+                {features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300 px-1 py-1 rounded-lg hover:bg-white/5"
+                  >
+                    <feature.icon
+                      size={14}
+                      className="text-blue-500 flex-shrink-0"
+                    />
+                    <span className="truncate">{feature.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Quick Links */}
             <nav className="text-center sm:text-left relative">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Quick Links</h4>
+              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">
+                Quick Links
+              </h4>
               <ul className="grid grid-cols-2 gap-2 sm:gap-3 text-sm">
                 {[
                   { href: "/compare-text", label: "Compare Text" },
@@ -246,23 +255,33 @@ const Footer = () => {
 
             {/* Why Choose Us */}
             <div className="text-center sm:text-left">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Why Choose Us?</h4>
+              <h4 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">
+                Why Choose Us?
+              </h4>
               <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                 <div className="flex items-start justify-center sm:justify-start gap-2">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400 text-left">Lightning-fast comparison algorithms</span>
+                  <span className="text-gray-400 text-left">
+                    Lightning-fast comparison algorithms
+                  </span>
                 </div>
                 <div className="flex items-start justify-center sm:justify-start gap-2">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400 text-left">100% free with no registration required</span>
+                  <span className="text-gray-400 text-left">
+                    100% free with no registration required
+                  </span>
                 </div>
                 <div className="flex items-start justify-center sm:justify-start gap-2">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400 text-left">Works on all devices and browsers</span>
+                  <span className="text-gray-400 text-left">
+                    Works on all devices and browsers
+                  </span>
                 </div>
                 <div className="flex items-start justify-center sm:justify-start gap-2">
                   <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-400 text-left">Your data never leaves your device</span>
+                  <span className="text-gray-400 text-left">
+                    Your data never leaves your device
+                  </span>
                 </div>
               </div>
             </div>
@@ -277,7 +296,8 @@ const Footer = () => {
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "Text Compare Tool",
-              description: "Free online text, file, and image comparison tool for developers, writers, and students. Fast, accurate, and privacy-focused.",
+              description:
+                "Free online text, file, and image comparison tool for developers, writers, and students. Fast, accurate, and privacy-focused.",
               applicationCategory: "Utility",
               operatingSystem: "Web",
               url: "https://freeonlinetextcomparetool.com",
@@ -287,19 +307,19 @@ const Footer = () => {
                 sameAs: [
                   "https://github.com/gihankadawathage",
                   "https://twitter.com/gihankadawathage",
-                  "https://linkedin.com/in/gihankadawathage"
-                ]
+                  "https://linkedin.com/in/gihankadawathage",
+                ],
               },
               offers: {
                 "@type": "Offer",
                 price: "0",
-                priceCurrency: "USD"
+                priceCurrency: "USD",
               },
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.8",
-                reviewCount: "1250"
-              }
+                reviewCount: "1250",
+              },
             }),
           }}
         />

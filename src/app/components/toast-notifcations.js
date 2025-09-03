@@ -19,10 +19,13 @@ export const HomePageToastNotifications = () => {
           />
         </svg>
         <p className="text-sm font-medium">
-          Paste your <span className="font-semibold">Original</span> text on the
-          left and your <span className="font-semibold">Modified</span> text on
-          the right. Then click <span className="font-semibold">Compare</span>{" "}
-          to see the differences.
+          Paste your <span className="font-semibold">original text</span> in the{" "}
+          <span className="font-semibold">left box</span> and your{" "}
+          <span className="font-semibold">modified text</span> in the{" "}
+          <span className="font-semibold">right box</span>. Click{" "}
+          <span className="font-semibold">Compare</span> to instantly highlight{" "}
+          <span className="font-semibold">differences, similarities,</span> and{" "}
+          <span className="font-semibold">changes</span> between both texts.
         </p>
       </div>
     </div>
@@ -48,10 +51,14 @@ export const FileCompareToastNotifications = () => {
           />
         </svg>
         <p className="text-sm font-medium">
-          Paste your <span className="font-semibold">Original</span> text file on the
-          left and your <span className="font-semibold">Modified</span> text file on
-          the right. Then click <span className="font-semibold">Compare</span>{" "}
-          to see the differences.
+          Upload your <span className="font-semibold">original text file</span> in
+          the <span className="font-semibold">left box</span> and your{" "}
+          <span className="font-semibold">modified file</span> in the{" "}
+          <span className="font-semibold">right box</span>. Click{" "}
+          <span className="font-semibold">Compare</span> to quickly{" "}
+          <span className="font-semibold">highlight differences, similarities,</span>{" "}
+          and <span className="font-semibold">changes</span> between both files with
+          our <span className="font-semibold">file comparison tool</span>.
         </p>
       </div>
     </div>
