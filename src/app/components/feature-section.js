@@ -2,13 +2,17 @@ export default function FeaturesSection({ type }) {
   return (
     <div className="bg-white/95 backdrop-blur-lg rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl text-center">
       {/* Hero Description */}
-      <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8 px-2">
+      <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-snug max-w-6xl mx-auto mb-2 md:mb-4 px-1">
         Compare two {type} instantly with our{" "}
-        <strong className="text-gray-900">online text comparison and diff checker</strong>. 
-        Highlight differences, detect changes, and analyze edits with precision, accuracy, and speed. 
-        Ideal for <strong>developers, writers, editors, researchers, reviewers,</strong> and{" "}
-        <strong>content creators</strong> who need a reliable, intuitive, and efficient solution for reviewing revisions, 
-        spotting subtle changes, and improving document quality.
+        <strong className="text-gray-900">
+          online text comparison and diff checker
+        </strong>
+        . Highlight differences, detect changes, and analyze edits with
+        precision, accuracy, and speed. Ideal for{" "}
+        <strong>developers, writers, editors, researchers, reviewers,{" "}
+        and content creators</strong> who need a reliable, intuitive,
+        and efficient solution for reviewing revisions, spotting subtle changes,
+        and improving document quality.
       </p>
 
       {/* Features Grid */}
@@ -31,7 +35,8 @@ export default function FeaturesSection({ type }) {
             Detailed Analysis
           </p>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Detect changes at <strong>character and word level</strong> for complete accuracy.
+            Detect changes at <strong>character and word level</strong> for
+            complete accuracy.
           </p>
         </div>
 
@@ -42,7 +47,8 @@ export default function FeaturesSection({ type }) {
             Detailed Metrics
           </p>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Get <strong>comprehensive statistics</strong> on differences, insertions, and deletions.
+            Get <strong>comprehensive statistics</strong> on differences,
+            insertions, and deletions.
           </p>
         </div>
 
@@ -53,7 +59,8 @@ export default function FeaturesSection({ type }) {
             Visual Diff
           </p>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            <strong>Color-coded highlights</strong> make changes easy to identify at a glance.
+            <strong>Color-coded highlights</strong> make changes easy to
+            identify at a glance.
           </p>
         </div>
       </div>
