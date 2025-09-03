@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 export const metadata = {
   title: "Online Text Comparison Tool | Compare Text Fast",
@@ -12,9 +13,6 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
-  alternates: {
-    canonical: "https://freeonlinetextcomparetool.com/",
   },
   openGraph: {
     title: "Free Online Text Compare Tool | Fast & Accurate Diff Checker",
@@ -42,9 +40,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname(); // For dynamic canonical URL
+  const canonicalUrl = `https://freeonlinetextcomparetool.com${pathname}`;
+
   return (
     <html lang="en">
       <head>
+        {/* Canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -60,6 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             });
           `}
         </Script>
+
         {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
