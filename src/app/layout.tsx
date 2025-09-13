@@ -2,16 +2,22 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { usePathname } from "next/navigation";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug?: string } }): Promise<Metadata> {
+  const slug = params?.slug ? `/${params.slug}` : "";
+  return {
+    alternates: {
+      canonical: `https://freeonlinetextcomparetool.com${slug}`,
+    },
+  };
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname(); // dynamic path
-  const canonicalUrl = `https://freeonlinetextcomparetool.com${pathname}`;
 
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href={canonicalUrl} />
 
         {/* Google Analytics */}
         <Script
@@ -41,7 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               applicationCategory: "Utility",
               operatingSystem: "Any",
               description:
-                "Free online text compare tool to find differences between two texts quickly and highlight them instantly.",
+                "Free online compare tool to quickly find differences between two texts, files, or images. Instantly highlight changes, spot duplicates, and analyze content side by side with ease.",
               offers: {
                 "@type": "Offer",
                 price: "0",
