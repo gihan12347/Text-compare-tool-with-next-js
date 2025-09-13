@@ -1,4 +1,4 @@
-"use client"; // <--- This makes the component a Client Component
+// "use client"; // <--- This makes the component a Client Component
 import "./globals.css";
 import type { ReactNode } from "react";
 import Script from "next/script";
