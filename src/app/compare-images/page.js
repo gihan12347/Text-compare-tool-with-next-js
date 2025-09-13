@@ -1,4 +1,4 @@
-import ImageCompare from './pages/image-compare.js';
+import ImageCompare from '../pages/image-compare.js';
 
 export const metadata = {
   title: 'Image Compare - Free Online Image Difference Tool',

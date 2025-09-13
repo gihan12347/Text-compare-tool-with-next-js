@@ -1,4 +1,4 @@
-import About from './pages/about.js';
+import About from '../pages/about.js';
 
 export const metadata = {
   title: 'Text File Compare Tool - Free Online Difference Checker',

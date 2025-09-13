@@ -1,4 +1,4 @@
-import FileCompare from './pages/file-compare.js';
+import FileCompare from '../pages/file-compare.js';
 
 export const metadata = {
   title: 'Text File Compare - Free Online Text Difference Tool',
