@@ -5,6 +5,7 @@ import NavigationBar from "../components/navbar.js";
 import Footer from "../components/footer.js";
 import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file-compare.js";
 import FeaturesSection from "../components/feature-section.js";
+import AdBanner from '../components/ad-component.js';
 
 export default function FileCompare() {
   const bottomRef = useRef(null);
@@ -12,6 +13,7 @@ export default function FileCompare() {
     <>
       <NavigationBar selectedType="file" />
       <ImprovedTextareaUIForFile></ImprovedTextareaUIForFile>
+      <AdBanner />
       <FeaturesSection type="files" />
       <div
         ref={bottomRef}
