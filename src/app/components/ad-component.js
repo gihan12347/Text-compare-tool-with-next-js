@@ -4,23 +4,32 @@ import Script from "next/script";
 export default function AdBanner() {
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      const ads = document.querySelectorAll(".adsbygoogle");
+      ads.forEach(ad => {
+        if (!ad.getAttribute("data-adsbygoogle-status")) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      });
     } catch (err) {
       console.error("Adsense error: ", err);
     }
 
-    // Watch for unfilled ads
-    const adEl = document.querySelector(".adsbygoogle");
-    if (adEl) {
-      const observer = new MutationObserver(() => {
-        if (adEl.getAttribute("data-ad-status") === "unfilled") {
-          adEl.style.display = "none";
-          adEl.style.height = "0px";
+    // 🔎 Watch for unfilled ads and collapse them
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll(".adsbygoogle").forEach(ad => {
+        if (ad.getAttribute("data-ad-status") === "unfilled") {
+          ad.style.display = "none";
+          ad.style.height = "0px";
+          ad.style.minHeight = "0px";
         }
       });
-      observer.observe(adEl, { attributes: true });
-      return () => observer.disconnect();
-    }
+    });
+
+    document.querySelectorAll(".adsbygoogle").forEach(ad => {
+      observer.observe(ad, { attributes: true });
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
