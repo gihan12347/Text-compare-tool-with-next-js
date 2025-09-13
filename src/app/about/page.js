@@ -1,22 +1,17 @@
-"use client"; 
+import About from './pages/about.js';
 
-import React, { useRef } from "react";
-import NavigationBar from "../components/navbar.js";
-import Footer from "../components/footer.js";
-import AboutSection from "../components/about-component.js";
+export const metadata = {
+  title: 'Text File Compare Tool - Free Online Difference Checker',
+  description: 'Our free online compare tool makes it easy to analyze text files and images. Instantly spot differences with a clear side-by-side view, and quickly detect inserted, deleted, or modified content.',
+  alternates: {
+    canonical: 'https://freeonlinetextcomparetool.com/about',
+  },
+};
 
-export default function TextCompare() {
-  const bottomRef = useRef(null);
+export default function TextComparePage() {
   return (
     <>
-      <NavigationBar selectedType="" />
-      <AboutSection/>
-      <div
-        ref={bottomRef}
-        className="bg-black text-white py-4 text-center mt-4"
-      >
-        <Footer />
-      </div>
+      <About />
     </>
   );
 }

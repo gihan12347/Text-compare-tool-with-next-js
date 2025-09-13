@@ -1,24 +1,17 @@
-"use client";
+import FileCompare from './pages/file-compare.js';
 
-import React, { useRef } from "react";
-import NavigationBar from "../components/navbar.js";
-import Footer from "../components/footer.js";
-import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file-compare.js";
-import FeaturesSection from "../components/feature-section.js";
+export const metadata = {
+  title: 'Text File Compare - Free Online Text Difference Tool',
+  description: 'Compare two text files instantly with our free online text file compare tool. Highlight differences, track inserted or deleted lines, and clearly see every change side by side.',
+  alternates: {
+    canonical: 'https://freeonlinetextcomparetool.com/compare-file',
+  },
+};
 
-export default function TextCompare() {
-  const bottomRef = useRef(null);
+export default function TextComparePage() {
   return (
     <>
-      <NavigationBar selectedType="file" />
-      <ImprovedTextareaUIForFile></ImprovedTextareaUIForFile>
-      <FeaturesSection type="files" />
-      <div
-        ref={bottomRef}
-        className="bg-black text-white py-4 text-center mt-4"
-      >
-        <Footer />
-      </div>
+      <FileCompare />
     </>
   );
 }

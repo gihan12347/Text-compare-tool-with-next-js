@@ -1,22 +1,17 @@
-"use client";
+import ImageCompare from './pages/image-compare.js';
 
-import React, { useRef } from "react";
-import NavigationBar from "../components/navbar.js";
-import Footer from "../components/footer.js";
-import ImageCompareComponent from "../components/image-compare.js"; 
+export const metadata = {
+  title: 'Image Compare - Free Online Image Difference Tool',
+  description: 'Compare two images side by side with our free online image compare tool. Highlight visual differences, detect changes, and easily spot modified or altered areas between pictures.',
+  alternates: {
+    canonical: 'https://freeonlinetextcomparetool.com/compare-images',
+  },
+};
 
-export default function TextCompare() {
-  const bottomRef = useRef(null);
+export default function TextComparePage() {
   return (
     <>
-      <NavigationBar selectedType="images" />
-      <ImageCompareComponent /> 
-      <div
-        ref={bottomRef}
-        className="bg-black text-white py-4 text-center mt-4"
-      >
-        <Footer />
-      </div>
+      <ImageCompare />
     </>
   );
 }
