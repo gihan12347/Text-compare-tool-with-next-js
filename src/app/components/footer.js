@@ -50,9 +50,9 @@ const SocialShareButton = ({ platform, url, text, icon: Icon, color }) => {
       return;
     }
 
-    let shareUrl = "";
     const encodedUrl = encodeURIComponent(url);
     const encodedText = encodeURIComponent(text);
+    let shareUrl = "";
 
     switch (platform) {
       case "twitter":
@@ -64,8 +64,13 @@ const SocialShareButton = ({ platform, url, text, icon: Icon, color }) => {
       case "linkedin":
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
         break;
+      case "whatsapp":
+        shareUrl = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
+        break;
       case "github":
         shareUrl = "https://github.com/gihankadawathage";
+        break;
+      default:
         break;
     }
 
@@ -82,7 +87,7 @@ const SocialShareButton = ({ platform, url, text, icon: Icon, color }) => {
     <button
       onClick={handleShare}
       className={`group relative p-3 rounded-full transition-all duration-300 hover:scale-110 ${color} hover:shadow-lg backdrop-blur-sm border border-white/10`}
-      aria-label={`Share on ${platform}`}
+      aria-label={platform === "copy" ? "Copy link" : `Share on ${platform}`}
       title={platform === "copy" ? "Copy link" : `Share on ${platform}`}
     >
       {platform === "copy" && copied ? (

@@ -6,6 +6,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://freeonlinetextcomparetool.com/compare-images',
   },
+  icons: {
+    icon: '/favicon.ico', 
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function TextComparePage() {
