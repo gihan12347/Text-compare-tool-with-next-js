@@ -1,17 +1,7 @@
-// "use client"; // <--- This makes the component a Client Component
+"use client"; // <--- This makes the component a Client Component
 import "./globals.css";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import type { Metadata } from "next";
-
-export async function generateMetadata({ params }: { params: { slug?: string } }): Promise<Metadata> {
-  const slug = params?.slug ? `/${params.slug}` : "";
-  return {
-    alternates: {
-      canonical: `https://freeonlinetextcomparetool.com${slug}`,
-    },
-  };
-}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 
