@@ -1,8 +1,8 @@
 import ImageCompare from '../pages/image-compare.js';
 
 export const metadata = {
-  title: 'Image Compare - Free Online Image Difference Tool',
-  description: 'Compare two images side by side with our free online image compare tool. Highlight visual differences, detect changes, and easily spot modified or altered areas between pictures.',
+  title: 'Text File & Image Compare - Free Online Difference Tool',
+  description: 'Compare two images side by side with our free online tool. Highlight visual differences, detect changes, and spot modified or altered areas easily.',
   alternates: {
     canonical: 'https://freeonlinetextcomparetool.com/compare-images',
   },
