@@ -75,13 +75,6 @@ const NavigationBar = ({ selectedType }) => {
               <h1 className="font-bold text-white text-lg sm:text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Free Online Text Compare Tool
               </h1>
-              <h2 className="sr-only">
-                Compare text, files, and images online with accuracy and speed
-              </h2>
-              <h3 className="sr-only">
-                Compare plain text side by side and highlight differences
-                instantly
-              </h3>
               <p className="text-xs text-gray-400 hidden sm:block">
                 Compare text, files & images with precision
               </p>

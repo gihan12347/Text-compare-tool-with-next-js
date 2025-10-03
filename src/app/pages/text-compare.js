@@ -6,6 +6,7 @@ import Footer from '../components/footer.js';
 import ImprovedTextareaUI from '../components/improved-text-area.js';
 import FeaturesSection from '../components/feature-section.js';
 import AdBanner from '../components/ad-component.js';
+import CenterComponent from '../components/center-component.js';
 
 export default function TextCompare() {
   const bottomRef = useRef(null);
@@ -16,6 +17,7 @@ export default function TextCompare() {
       <ImprovedTextareaUI />
       <AdBanner />
       <FeaturesSection type="texts" />
+      <CenterComponent />
       <div ref={bottomRef} className="bg-black text-white py-4 text-center mt-4">
         <Footer />
       </div>

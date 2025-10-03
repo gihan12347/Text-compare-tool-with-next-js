@@ -16,7 +16,16 @@ const nextConfig: NextConfig = {
   experimental: {
   },
 
-  // You can add custom headers, caching, or redirects here in the future
+  // Redirects
+  async redirects() {
+    return [
+      {
+        source: '/text-compare',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
