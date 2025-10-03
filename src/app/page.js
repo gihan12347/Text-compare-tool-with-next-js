@@ -1,7 +1,7 @@
 import TextCompare from './pages/text-compare.js';
 
 export const metadata = {
-  title: 'Text File & Image Compare Tool | Compare Two Texts Online Free',
+  title: 'Text & Image Compare Tool | Free Online Text Comparison',
   description: 'Free text compare tool to compare two texts online instantly. Highlight differences, detect inserted or deleted content, and clearly see every change.',
   alternates: {
     canonical: 'https://freeonlinetextcomparetool.com',

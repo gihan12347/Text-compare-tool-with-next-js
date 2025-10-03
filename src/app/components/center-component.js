@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FileText,
-  Shield,
-  Zap,
-  ChevronRight,
-  Link,
-} from "lucide-react";
+import { FileText, Shield, Zap, ChevronRight, Link } from "lucide-react";
 
 export default function CenterComponent() {
   return (
@@ -40,9 +34,9 @@ export default function CenterComponent() {
               <strong>online text comparison tool</strong> is designed to be
               fast, secure, and easy to use for anyone who needs to compare
               content with precision. Simply paste your original text and
-              modified text into the boxes, click{" "}
-              <em>&ldquo;Compare&rdquo;</em>, and instantly view the differences
-              highlighted side by side in an easy-to-read format. This powerful{" "}
+              modified text into the boxes, click <em>&ldquo;Compare&rdquo;</em>
+              , and instantly view the differences highlighted side by side in
+              an easy-to-read format. This powerful{" "}
               <strong>diff checker</strong> works for essays, research papers,
               legal contracts, website content, source code, or any other type
               of document where accuracy matters. You&rsquo;ll be able to
@@ -91,20 +85,29 @@ export default function CenterComponent() {
             </h2>
             <div className="space-y-3 text-gray-700 text-base md:text-lg leading-relaxed">
               <p>
-                Our online text compare tool is designed for speed, security,
-                and simplicity. With just a few clicks, you can paste two pieces
-                of text, hit &quot;Compare,&quot; and instantly see highlighted
-                differences side by side. Perfect for students, developers,
-                editors, and professionals.
+                Our online text compare tool is built for{" "}
+                <strong>speed, security, and accuracy</strong>. In just a few
+                clicks, you can paste or upload two pieces of text, press
+                &quot;Compare,&quot; and instantly view the differences
+                highlighted side by side. This makes it an essential tool for{" "}
+                <strong>
+                  students, developers, editors, researchers, and professionals
+                </strong>{" "}
+                who need quick and reliable results.
               </p>
               <p>
-                For longer documents, our smart navigation with jump links makes
-                scanning through differences effortless and time-saving.
+                Unlike many basic text diff checkers, our tool supports{" "}
+                <strong>long-form documents</strong>
+                and includes a smart navigation system with jump links. This
+                allows you to move through each change without endless
+                scrolling, saving valuable time during editing and review.
               </p>
               <p>
-                Unlike many tools, our text diff checker doesn&rsquo;t require
-                registration or downloads and guarantees privacy&mdash;your data
-                never leaves your browser.
+                Privacy and convenience are at the core of our solution. Our
+                tool doesn&rsquo;t require sign-ups, downloads, or external
+                servers. All comparisons run
+                <strong> directly in your browser</strong>, meaning your content
+                stays private, secure, and fully under your control.
               </p>
             </div>
           </div>
@@ -117,18 +120,33 @@ export default function CenterComponent() {
             </h2>
             <div className="space-y-3 text-gray-700 text-base md:text-lg leading-relaxed">
               <p>
-                Comparing texts ensures originality and avoids duplicate content
-                issues, crucial for SEO, academic work, and professional
-                writing.
+                Comparing texts online is essential for ensuring{" "}
+                <strong>originality, consistency, and accuracy</strong>. By
+                identifying even the smallest changes, you can avoid
+                <strong> duplicate content issues</strong>, which are critical
+                for both
+                <strong> SEO optimization</strong> and academic integrity.
               </p>
               <p>
-                It&rsquo;s also useful for detecting plagiarism, monitoring
-                content updates, and maintaining brand consistency across
-                platforms.
+                The tool is also invaluable for{" "}
+                <strong>
+                  plagiarism detection, content monitoring, and version control
+                </strong>
+                . Whether you&rsquo;re a blogger updating posts, a business
+                tracking policy changes, or a developer reviewing source code,
+                text comparison helps you stay in control of every edit.
               </p>
               <p>
-                Writers, developers, researchers, and businesses benefit from
-                precise, reliable comparisons with our free tool.
+                Writers, researchers, and businesses rely on accurate comparison
+                tools to
+                <strong>
+                  {" "}
+                  maintain brand consistency, verify originality, and streamline
+                  editing workflows
+                </strong>
+                . With our free online text diff checker, you can work faster,
+                spot changes clearly, and ensure that your documents remain
+                high-quality and trustworthy.
               </p>
             </div>
           </div>
