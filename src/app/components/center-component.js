@@ -4,6 +4,7 @@ import {
   Shield,
   Zap,
   ChevronRight,
+  Link,
 } from "lucide-react";
 
 export default function CenterComponent() {
@@ -39,18 +40,18 @@ export default function CenterComponent() {
               <strong>online text comparison tool</strong> is designed to be
               fast, secure, and easy to use for anyone who needs to compare
               content with precision. Simply paste your original text and
-              modified text into the boxes, click <em>“Compare”</em>, and
-              instantly view the differences highlighted side by side in an
-              easy-to-read format. This powerful <strong>diff checker</strong>{" "}
-              works for essays, research papers, legal contracts, website
-              content, source code, or any other type of document where accuracy
-              matters. You’ll be able to identify{" "}
-              <strong>additions, removals, and text changes</strong> clearly,
-              helping you avoid mistakes and save valuable editing time. For
-              longer documents, our smart navigation system with jump links lets
-              you move quickly through each detected change without endless
-              scrolling. Whether you are a writer checking revisions, a student
-              verifying originality, a developer comparing code, or a
+              modified text into the boxes, click{" "}
+              <em>&ldquo;Compare&rdquo;</em>, and instantly view the differences
+              highlighted side by side in an easy-to-read format. This powerful{" "}
+              <strong>diff checker</strong> works for essays, research papers,
+              legal contracts, website content, source code, or any other type
+              of document where accuracy matters. You&rsquo;ll be able to
+              identify <strong>additions, removals, and text changes</strong>{" "}
+              clearly, helping you avoid mistakes and save valuable editing
+              time. For longer documents, our smart navigation system with jump
+              links lets you move quickly through each detected change without
+              endless scrolling. Whether you are a writer checking revisions, a
+              student verifying originality, a developer comparing code, or a
               professional reviewing critical documents, this
               <strong> free text compare tool</strong> ensures that you never
               miss even the smallest difference. Best of all, it runs entirely
@@ -92,7 +93,7 @@ export default function CenterComponent() {
               <p>
                 Our online text compare tool is designed for speed, security,
                 and simplicity. With just a few clicks, you can paste two pieces
-                of text, hit "Compare," and instantly see highlighted
+                of text, hit &quot;Compare,&quot; and instantly see highlighted
                 differences side by side. Perfect for students, developers,
                 editors, and professionals.
               </p>
@@ -101,9 +102,9 @@ export default function CenterComponent() {
                 scanning through differences effortless and time-saving.
               </p>
               <p>
-                Unlike many tools, our text diff checker doesn’t require
-                registration or downloads and guarantees privacy—your data never
-                leaves your browser.
+                Unlike many tools, our text diff checker doesn&rsquo;t require
+                registration or downloads and guarantees privacy&mdash;your data
+                never leaves your browser.
               </p>
             </div>
           </div>
@@ -121,8 +122,9 @@ export default function CenterComponent() {
                 writing.
               </p>
               <p>
-                It’s also useful for detecting plagiarism, monitoring content
-                updates, and maintaining brand consistency across platforms.
+                It&rsquo;s also useful for detecting plagiarism, monitoring
+                content updates, and maintaining brand consistency across
+                platforms.
               </p>
               <p>
                 Writers, developers, researchers, and businesses benefit from
@@ -162,34 +164,6 @@ export default function CenterComponent() {
                   Displays original and modified text side by side for easy
                   identification of edits.
                 </p>
-              </li>
-            </ul>
-          </div>
-
-          {/* Related Topics */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 md:p-8 mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
-              <span className="bg-blue-600 w-1 h-8 mr-3 rounded"></span>
-              Related Tools & Guides
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/word-counter"
-                  className="flex items-center text-gray-700 text-base md:text-lg hover:text-blue-600 transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
-                  Free Online Word Counter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/plagiarism-guide"
-                  className="flex items-center text-gray-700 text-base md:text-lg hover:text-blue-600 transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5 text-blue-600 mr-2" />
-                  Plagiarism Guide – How to Avoid Duplicate Content
-                </a>
               </li>
             </ul>
           </div>
