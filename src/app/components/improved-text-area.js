@@ -63,15 +63,12 @@ const ImprovedTextareaUI = () => {
     }
   }, [isVisible]);
 
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
   const compareTexts = async () => {
     console.log("Comparing texts...");
     if (!text1.trim() || !text2.trim()) {
       return;
     }
     setIsLoading(true);
-    await delay(50000); 
     try {
       const res = await axios.post(
         "https://text-compare-tool-1071342381187.us-central1.run.app/text-compare-tool/api/compare",
