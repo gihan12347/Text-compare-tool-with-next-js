@@ -1,23 +1,58 @@
 import React from "react";
 import { FileText, Shield, Zap } from "lucide-react";
 
-export default function CenterComponent() {
+export default function CenterComponent({ type = "text" }) {
+  const isText = type === "text";
+  const title = isText
+    ? "Online Text Compare Tool – Find Differences Instantly"
+    : "Online File Compare Tool – Find Differences Instantly";
+
+  const subtitle = isText
+    ? "Compare two texts, documents, or files online and instantly see the differences side-by-side."
+    : "Compare two files or folders online and instantly see the differences side-by-side.";
+
+  const description = isText
+    ? "Our free text comparison tool makes it simple to check for duplication, plagiarism, or content changes in just one click."
+    : "Our free file comparison tool makes it simple to check for code, document, or content changes in just one click.";
+
+  const introToolName = isText
+    ? "online text comparison tool"
+    : "online file comparison tool";
+
+  const diffCheckerName = isText ? "diff checker" : "file diff checker";
+
+  const freeToolName = isText
+    ? "free text compare tool"
+    : "free file compare tool";
+
+  const comparisonPhrase = isText
+    ? "text comparison online"
+    : "file comparison online";
+
+  const whyTitle = isText
+    ? "Why Choose Our Text Comparison Tool?"
+    : "Why Choose Our File Comparison Tool?";
+
+  const whyCompareTitle = isText
+    ? "Why Compare Texts Online?"
+    : "Why Compare Files Online?";
+
+  const featureTitle = isText
+    ? "Key Features of Our Text Comparison Tool"
+    : "Key Features of Our File Comparison Tool";
+
   return (
     <main className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-8 md:py-12">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Online Text Compare Tool – Find Differences Instantly
+            {title}
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-4 font-medium">
-            Compare two texts, documents, or files online and instantly see
-            the differences side-by-side.
+            {subtitle}
           </p>
-          <p className="text-lg md:text-xl text-gray-600 mb-6">
-            Our free text comparison tool makes it simple to check for
-            duplication, plagiarism, or content changes in just one click.
-          </p>
+          <p className="text-lg md:text-xl text-gray-600 mb-6">{description}</p>
         </div>
       </section>
 
@@ -32,23 +67,25 @@ export default function CenterComponent() {
           >
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
               Welcome to the most efficient and reliable way to highlight
-              differences in your text. Our free{" "}
+              differences in your {isText ? "text" : "files"}. Our free{" "}
               <span className="font-semibold text-blue-800 dark:text-blue-300">
-                online text comparison tool
+                {introToolName}
               </span>{" "}
               is designed to be fast, secure, and easy to use for anyone who
-              needs to compare content with precision. Simply paste your
-              original text and modified text into the boxes, click{" "}
-              <em>&ldquo;Compare&rdquo;</em>, and instantly view the differences
-              highlighted side by side. This powerful{" "}
+              needs to compare content with precision. Simply{" "}
+              {isText
+                ? "paste your original text and modified text into the boxes"
+                : "upload your original and modified files"}{" "}
+              , click <em>&ldquo;Compare&rdquo;</em>, and instantly view the
+              differences highlighted side by side. This powerful{" "}
               <span className="font-semibold text-blue-800 dark:text-blue-300">
-                diff checker
+                {diffCheckerName}
               </span>{" "}
               works for essays, research papers, legal contracts, website
               content, source code, or any other type of document where accuracy
               matters. You’ll be able to identify{" "}
               <span className="font-semibold text-blue-800 dark:text-blue-300">
-                additions, removals, and text changes
+                additions, removals, and changes
               </span>{" "}
               clearly, helping you avoid mistakes and save valuable editing
               time. For longer documents, our smart navigation system with jump
@@ -57,14 +94,14 @@ export default function CenterComponent() {
               student verifying originality, a developer comparing code, or a
               professional reviewing critical documents, this{" "}
               <span className="font-semibold text-blue-800 dark:text-blue-300">
-                free text compare tool
+                {freeToolName}
               </span>{" "}
               ensures that you never miss even the smallest difference. Best of
               all, it runs entirely in your browser with no downloads or
               registrations required, making it a safe, private, and efficient
               solution for accurate{" "}
               <span className="font-semibold text-blue-800 dark:text-blue-300">
-                text comparison online
+                {comparisonPhrase}
               </span>
               .
             </p>
@@ -96,16 +133,20 @@ export default function CenterComponent() {
           <section className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
               <span className="bg-blue-600 w-1 h-8 mr-3 rounded"></span>
-              Why Choose Our Text Comparison Tool?
+              {whyTitle}
             </h2>
             <div className="space-y-3 text-gray-700 text-base md:text-lg leading-relaxed">
               <p>
-                Our online text compare tool is built for{" "}
+                Our {isText ? "online text compare tool" : "online file compare tool"} is built
+                for{" "}
                 <span className="font-semibold text-blue-800 dark:text-blue-300">
                   speed, security, and accuracy
                 </span>
-                . In just a few clicks, you can paste or upload two pieces of
-                text, press “Compare,” and instantly view the differences
+                . In just a few clicks, you can{" "}
+                {isText
+                  ? "paste or upload two pieces of text"
+                  : "upload or select two files or folders"}
+                , press “Compare,” and instantly view the differences
                 highlighted side by side. This makes it an essential tool for{" "}
                 <span className="font-semibold text-blue-800 dark:text-blue-300">
                   students, developers, editors, researchers, and professionals
@@ -113,7 +154,8 @@ export default function CenterComponent() {
                 who need quick and reliable results.
               </p>
               <p>
-                Unlike many basic text diff checkers, our tool supports{" "}
+                Unlike many basic {isText ? "text diff checkers" : "file diff tools"}, our tool
+                supports{" "}
                 <span className="font-semibold text-blue-800 dark:text-blue-300">
                   long-form documents
                 </span>{" "}
@@ -136,51 +178,84 @@ export default function CenterComponent() {
           <section className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
               <span className="bg-blue-600 w-1 h-8 mr-3 rounded"></span>
-              Why Compare Texts Online?
+              {whyCompareTitle}
             </h2>
             <div className="space-y-3 text-gray-700 text-base md:text-lg leading-relaxed">
-              <p>
-                Comparing texts online is essential for ensuring{" "}
-                <span className="font-semibold text-blue-800 dark:text-blue-300">
-                  originality, consistency, and accuracy
-                </span>
-                . By identifying even the smallest changes, you can avoid{" "}
-                <span className="font-semibold text-blue-800 dark:text-blue-300">
-                  duplicate content issues
-                </span>
-                , which are critical for both{" "}
-                <span className="font-semibold text-blue-800 dark:text-blue-300">
-                  SEO optimization
-                </span>{" "}
-                and academic integrity.
-              </p>
-              <p>
-                The tool is also invaluable for{" "}
-                <span className="font-semibold text-blue-800 dark:text-blue-300">
-                  plagiarism detection, content monitoring, and version control
-                </span>
-                . Whether you’re a blogger updating posts, a business tracking
-                policy changes, or a developer reviewing code, text comparison
-                helps you stay in control of every edit.
-              </p>
-              <p>
-                Writers, researchers, and businesses rely on accurate comparison
-                tools to{" "}
-                <span className="font-semibold text-blue-800 dark:text-blue-300">
-                  maintain brand consistency, verify originality, and streamline
-                  editing workflows
-                </span>
-                . With our free online text diff checker, you can work faster,
-                spot changes clearly, and ensure that your documents remain
-                high-quality and trustworthy.
-              </p>
+              {isText ? (
+                <>
+                  <p>
+                    Comparing texts online is essential for ensuring{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      originality, consistency, and accuracy
+                    </span>
+                    . By identifying even the smallest changes, you can avoid{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      duplicate content issues
+                    </span>
+                    , which are critical for both{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      SEO optimization
+                    </span>{" "}
+                    and academic integrity.
+                  </p>
+                  <p>
+                    The tool is also invaluable for{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      plagiarism detection, content monitoring, and version
+                      control
+                    </span>
+                    . Whether you’re a blogger updating posts, a business
+                    tracking policy changes, or a developer reviewing code, text
+                    comparison helps you stay in control of every edit.
+                  </p>
+                  <p>
+                    Writers, researchers, and businesses rely on accurate
+                    comparison tools to{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      maintain brand consistency, verify originality, and
+                      streamline editing workflows
+                    </span>
+                    . With our free online text diff checker, you can work
+                    faster, spot changes clearly, and ensure that your documents
+                    remain high-quality and trustworthy.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Comparing files online is essential for ensuring{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      accuracy, consistency, and version integrity
+                    </span>
+                    . It allows you to quickly detect modifications across
+                    documents, codebases, or directories — avoiding
+                    synchronization issues and data loss.
+                  </p>
+                  <p>
+                    The tool is perfect for{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      developers, IT professionals, and editors
+                    </span>{" "}
+                    who need to verify changes in configuration files, scripts,
+                    or textual content across versions.
+                  </p>
+                  <p>
+                    Our free online file diff checker helps you{" "}
+                    <span className="font-semibold text-blue-800 dark:text-blue-300">
+                      detect renames, additions, and deletions
+                    </span>
+                    , ensuring you never miss critical updates in your data or
+                    code repositories.
+                  </p>
+                </>
+              )}
             </div>
           </section>
 
           {/* Features Section */}
           <section className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-lg shadow-sm p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-              Key Features of Our Text Comparison Tool
+              {featureTitle}
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 list-disc pl-5">
               <li className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -188,16 +263,17 @@ export default function CenterComponent() {
                   Levenshtein Distance Calculation
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Detects even the smallest differences with accurate text
-                  similarity checks.
+                  Detects even the smallest differences with accurate{" "}
+                  {isText ? "text similarity checks" : "file content analysis"}.
                 </p>
               </li>
               <li className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  Common Text Highlighting
+                  Common {isText ? "Text" : "Content"} Highlighting
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Marks shared and modified text for faster, clearer reviews.
+                  Marks shared and modified {isText ? "text" : "lines"} for
+                  faster, clearer reviews.
                 </p>
               </li>
               <li className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow md:col-span-2">
@@ -205,7 +281,8 @@ export default function CenterComponent() {
                   Two-Column Comparison View
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Displays original and modified text side by side for easy
+                  Displays original and modified{" "}
+                  {isText ? "text" : "files"} side by side for easy
                   identification of edits.
                 </p>
               </li>
