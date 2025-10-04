@@ -63,15 +63,15 @@ const ImprovedTextareaUI = () => {
     }
   }, [isVisible]);
 
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   const compareTexts = async () => {
     console.log("Comparing texts...");
     if (!text1.trim() || !text2.trim()) {
-      // setIsAlertVisible(true);
       return;
     }
-
-    // setIsAlertVisible(false);
     setIsLoading(true);
+    await delay(50000); 
     try {
       const res = await axios.post(
         "https://text-compare-tool-1071342381187.us-central1.run.app/text-compare-tool/api/compare",
@@ -89,12 +89,12 @@ const ImprovedTextareaUI = () => {
   const cleanText = () => {
     setText1("");
     setText2("");
-    // setIsAlertVisible(false);
     setIsVisible(false);
     setDiffMap({ text1: [], text2: [] });
   };
 
   const handleSwap = () => {
+     if (isLoading) return;
     console.log("Swapping texts...");
     setText1(text2);
     setText2(text1);
