@@ -253,7 +253,7 @@ const ImprovedTextareaUI = () => {
             {isVisible && (
               <div
                 ref={resultRef}
-                className="flex flex-col lg:flex-row gap-4 w-full justify-center mt-4"
+                className="flex flex-col lg:flex-row gap-4 w-full justify-center mt-4 scroll-mt-50"
               >
                 <div className="w-full lg:w-1/2">
                   <label className="block text-sm font-medium font-bold mb-2">
