@@ -7,6 +7,7 @@ import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file
 import FeaturesSection from "../components/feature-section.js";
 import AdBanner from '../components/ad-component.js';
 import CenterComponent from '../components/center-component.js';
+import Demonstration from '../components/demostration.js';
 
 export default function FileCompare() {
   const bottomRef = useRef(null);
@@ -16,7 +17,8 @@ export default function FileCompare() {
       <ImprovedTextareaUIForFile></ImprovedTextareaUIForFile>
       <AdBanner />
       <FeaturesSection type="files" />
-      <CenterComponent type="text"/>
+      <CenterComponent type="file"/>
+      <Demonstration />
       <div
         ref={bottomRef}
         className="bg-black text-white py-4 text-center mt-4"

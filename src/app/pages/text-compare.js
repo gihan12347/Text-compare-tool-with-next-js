@@ -7,6 +7,7 @@ import ImprovedTextareaUI from '../components/improved-text-area.js';
 import FeaturesSection from '../components/feature-section.js';
 import AdBanner from '../components/ad-component.js';
 import CenterComponent from '../components/center-component.js';
+import Demonstration from '../components/demostration.js';
 
 export default function TextCompare() {
   const bottomRef = useRef(null);
@@ -18,6 +19,7 @@ export default function TextCompare() {
       <AdBanner />
       <FeaturesSection type="texts" />
       <CenterComponent type="file"/>
+      <Demonstration />
       <div ref={bottomRef} className="bg-black text-white py-4 text-center mt-4">
         <Footer />
       </div>

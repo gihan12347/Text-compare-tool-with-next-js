@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { FileCompareToastNotifications } from "../components/toast-notifcations.js";
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const AutoResizeTextarea = ({
   placeholder,
   value,
@@ -17,7 +19,7 @@ const AutoResizeTextarea = ({
     const textarea = textareaRef.current;
     if (!textarea) return;
 
-    textarea.style.height = "auto"; 
+    textarea.style.height = "auto";
     const lineHeight = parseInt(getComputedStyle(textarea).lineHeight, 10);
     const minHeight = lineHeight * minRows;
     const maxHeight = lineHeight * maxRows;
@@ -100,7 +102,6 @@ const ImprovedTextareaUIForFile = () => {
   const cleanText = () => {
     setText1("");
     setText2("");
-    // setIsAlertVisible(false);
     setIsVisible(false);
     setDiffMap({ text1: [], text2: [] });
   };
@@ -264,14 +265,25 @@ const ImprovedTextareaUIForFile = () => {
 
             {/* Results */}
             {isVisible && (
-              <div ref={resultRef} className="flex flex-col lg:flex-row gap-4 w-full justify-center mt-4">
+              <div
+                ref={resultRef}
+                className="flex flex-col lg:flex-row gap-4 w-full justify-center mt-4"
+              >
                 <div className="w-full lg:w-1/2">
-                  <label className="block text-sm font-medium font-bold mb-2">Original Text (Compared)</label>
-                  <div className="bg-gray-100 whitespace-pre-wrap p-2">{renderDiffStream(diffMap.text1)}</div>
+                  <label className="block text-sm font-medium font-bold mb-2">
+                    Original Text (Compared)
+                  </label>
+                  <div className="bg-gray-100 whitespace-pre-wrap p-2">
+                    {renderDiffStream(diffMap.text1)}
+                  </div>
                 </div>
                 <div className="w-full lg:w-1/2">
-                  <label className="block text-sm font-medium mb-2">Changed Text (Compared)</label>
-                  <div className="bg-gray-100 whitespace-pre-wrap p-2">{renderDiffStream(diffMap.text2)}</div>
+                  <label className="block text-sm font-medium mb-2">
+                    Changed Text (Compared)
+                  </label>
+                  <div className="bg-gray-100 whitespace-pre-wrap p-2">
+                    {renderDiffStream(diffMap.text2)}
+                  </div>
                 </div>
               </div>
             )}
