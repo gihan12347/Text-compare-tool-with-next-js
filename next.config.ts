@@ -1,3 +1,6 @@
+//In a Next.js project, next.config.js is the main configuration file for your app. 
+// It allows you to customize Next.js behavior, including builds, routing, images, 
+// environment variables, and more.
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {

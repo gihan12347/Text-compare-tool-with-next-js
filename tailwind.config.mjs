@@ -1,4 +1,4 @@
-// tailwind.config.mjs
+// configures Tailwind CSS, specifies content paths, themes, and plugins
 import { heroui } from "@heroui/react";
 
 export default {
