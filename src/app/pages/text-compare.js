@@ -18,7 +18,7 @@ export default function TextCompare() {
       <ImprovedTextareaUI />
       <AdBanner />
       <FeaturesSection type="texts" />
-      <CenterComponent type="file"/>
+      <CenterComponent type="text"/>
       <Demonstration />
       <div ref={bottomRef} className="bg-black text-white py-4 text-center mt-4">
         <Footer />
