@@ -4,15 +4,21 @@ export default function ContactUs() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For production: integrate with email API like EmailJS, Resend, or a backend endpoint.
-    window.location.href = `mailto:gdkadawathage@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0AFrom: ${formData.email}`;
+
+    // Use mailto for basic form submission
+    const subject = `Contact from ${formData.name}`;
+    const body = `${encodeURIComponent(formData.message)}%0D%0A%0D%0AFrom: ${formData.email}`;
+    window.location.href = `mailto:gdkadawathage@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
     setSubmitted(true);
   };
 
@@ -20,12 +26,17 @@ export default function ContactUs() {
     <main className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl bg-white shadow-md rounded-2xl p-8 md:p-12">
         <h1 className="text-3xl font-extrabold mb-6 text-gray-900">Contact Us</h1>
+
         <p className="text-gray-600 mb-8">
           Have questions or feedback about our Text, File, and Image Compare Tool? Fill out the form
-          below or email us directly at {" "}
-          <a href="mailto:gdkadawathage@gmail.com" className="text-blue-600 underline">
+          below or email us directly at{" "}
+          <a
+            href="mailto:gdkadawathage@gmail.com"
+            className="text-blue-600 underline"
+          >
             gdkadawathage@gmail.com
-          </a>.
+          </a>
+          .
         </p>
 
         {submitted ? (
@@ -35,7 +46,10 @@ export default function ContactUs() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Name
               </label>
               <input
@@ -50,7 +64,10 @@ export default function ContactUs() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email
               </label>
               <input
@@ -65,7 +82,10 @@ export default function ContactUs() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Message
               </label>
               <textarea
@@ -90,8 +110,11 @@ export default function ContactUs() {
 
         <footer className="mt-10 text-sm text-gray-500">
           <p>
-            Or email us directly: {" "}
-            <a href="mailto:gdkadawathage@gmail.com" className="text-blue-600 underline">
+            Or email us directly:{" "}
+            <a
+              href="mailto:gdkadawathage@gmail.com"
+              className="text-blue-600 underline"
+            >
               gdkadawathage@gmail.com
             </a>
           </p>
