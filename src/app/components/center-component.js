@@ -48,7 +48,7 @@ export default function CenterComponent({ type = "text" }) {
         <div className="container mx-auto px-4 text-center max-w-5xl relative z-10">
           <div className="mb-6">
             <span className="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
-              100% Free & Secure
+              100% Free &amp; Secure
             </span>
           </div>
 
@@ -91,7 +91,6 @@ export default function CenterComponent({ type = "text" }) {
       {/* Main Content */}
       <section className="container mx-auto px-4 py-10 md:py-16">
         <div className="max-w-6xl mx-auto space-y-8">
-
           {/* Introduction Card */}
           <article
             className="bg-white rounded-2xl shadow-xl border-2 border-cyan-100 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300"
@@ -108,27 +107,42 @@ export default function CenterComponent({ type = "text" }) {
             </div>
 
             <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              Welcome to the easiest and most reliable way to highlight differences in your {isText ? "text" : "files"}. Our free{" "}
+              Welcome to the easiest and most reliable way to highlight
+              differences in your {isText ? "text" : "files"}. Our free{" "}
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {introToolName}
               </span>{" "}
-              is designed to be fast, secure, and simple for anyone who needs to compare content. Just{" "}
+              is designed to be fast, secure, and simple for anyone who needs to
+              compare content. Just{" "}
               {isText
                 ? "paste your original text and modified text into the boxes"
                 : "upload your original and modified files"}{" "}
-              , click <em className="font-semibold text-blue-600">&ldquo;Compare&rdquo;</em>, and quickly see the differences highlighted side by side. This effective{" "}
+              , click{" "}
+              <em className="font-semibold text-blue-600">&ldquo;Compare&rdquo;</em>
+              , and quickly see the differences highlighted side by side. This
+              effective{" "}
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {diffCheckerName}
               </span>{" "}
-              works for essays, research papers, legal contracts, website content, source code, or any document where precision matters. You'll be able to spot{" "}
+              works for essays, research papers, legal contracts, website
+              content, source code, or any document where precision matters.
+              You&apos;ll be able to spot{" "}
               <span className="font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded">
                 additions, removals, and changes
               </span>{" "}
-              easily, helping you avoid errors and save valuable time. For longer documents, our smart navigation system with jump links lets you navigate quickly through each change without endless scrolling. Whether you are a writer checking revisions, a student verifying originality, a developer comparing code, or a professional reviewing essential documents, this{" "}
+              easily, helping you avoid errors and save valuable time. For
+              longer documents, our smart navigation system with jump links lets
+              you navigate quickly through each change without endless
+              scrolling. Whether you are a writer checking revisions, a student
+              verifying originality, a developer comparing code, or a
+              professional reviewing essential documents, this{" "}
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {freeToolName}
               </span>{" "}
-              makes sure you never miss even the smallest difference. Best of all, it runs entirely in your browser with no downloads or registrations needed, making it a safe, private, and efficient solution for accurate{" "}
+              makes sure you never miss even the smallest difference. Best of
+              all, it runs entirely in your browser with no downloads or
+              registrations needed, making it a safe, private, and efficient
+              solution for accurate{" "}
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {comparisonPhrase}
               </span>
@@ -159,9 +173,11 @@ export default function CenterComponent({ type = "text" }) {
                   {isText
                     ? "paste or upload two pieces of text"
                     : "upload or select two files or folders"}
-                  , press "Compare," and quickly see the differences highlighted side by side. This makes it an important tool for{" "}
+                  , press &quot;Compare,&quot; and quickly see the differences
+                  highlighted side by side. This makes it an important tool for{" "}
                   <span className="font-bold text-blue-700">
-                    students, developers, editors, researchers, and professionals
+                    students, developers, editors, researchers, and
+                    professionals
                   </span>{" "}
                   who need fast and reliable results.
                 </p>
@@ -176,7 +192,8 @@ export default function CenterComponent({ type = "text" }) {
                   <span className="font-bold text-cyan-700">
                     long-form documents
                   </span>{" "}
-                  and has a smart navigation system with jump links for easy browsing without endless scrolling.
+                  and has a smart navigation system with jump links for easy
+                  browsing without endless scrolling.
                 </p>
               </div>
 
@@ -185,18 +202,21 @@ export default function CenterComponent({ type = "text" }) {
                   <CheckCircle className="w-5 h-5 text-cyan-600" />
                 </div>
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed flex-1">
-                  Privacy and convenience are key to our solution. Our tool doesn't require sign-ups, downloads, or external servers. All comparisons run{" "}
+                  Privacy and convenience are key to our solution. Our tool
+                  doesn&apos;t require sign-ups, downloads, or external servers.
+                  All comparisons run{" "}
                   <span className="font-bold text-cyan-700">
                     directly in your browser
                   </span>
-                  , keeping your content private, secure, and under your control.
+                  , keeping your content private, secure, and under your
+                  control.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Why Necessary Section */}
-          <section className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl shadow-xl border-2 border-blue-100 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300">
+          <section className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl shadow-xl border-2 border-blue-100 p-8 md:p-10 hover:shadow-2xl transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 w-2 h-12 rounded-full"></span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -231,20 +251,27 @@ export default function CenterComponent({ type = "text" }) {
                     <p className="text-slate-700 text-base md:text-lg leading-relaxed flex-1">
                       The tool is also invaluable for{" "}
                       <span className="font-bold text-blue-700">
-                        plagiarism detection, content monitoring, and version control
+                        plagiarism detection, content monitoring, and version
+                        control
                       </span>
-                      . Whether you're a blogger updating posts, a business tracking policy changes, or a developer reviewing code, text comparison helps you stay in control of every edit.
+                      . Whether you&apos;re a blogger updating posts, a business
+                      tracking policy changes, or a developer reviewing code,
+                      text comparison helps you stay in control of every edit.
                     </p>
                   </div>
 
                   <div className="flex gap-4 items-start bg-white rounded-xl p-5 border border-blue-100 hover:border-blue-300 transition-all duration-300">
                     <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <p className="text-slate-700 text-base md:text-lg leading-relaxed flex-1">
-                      Writers, researchers, and businesses depend on accurate comparison tools to{" "}
+                      Writers, researchers, and businesses depend on accurate
+                      comparison tools to{" "}
                       <span className="font-bold text-blue-700">
-                        maintain brand consistency, verify originality, and streamline editing workflows
+                        maintain brand consistency, verify originality, and
+                        streamline editing workflows
                       </span>
-                      . With our free online text diff checker, you can work faster, see changes clearly, and make sure your documents stay high-quality and trustworthy.
+                      . With our free online text diff checker, you can work
+                      faster, see changes clearly, and make sure your documents
+                      stay high-quality and trustworthy.
                     </p>
                   </div>
                 </>
@@ -257,7 +284,9 @@ export default function CenterComponent({ type = "text" }) {
                       <span className="font-bold text-blue-700">
                         accuracy, consistency, and version integrity
                       </span>
-                      . It allows you to quickly find modifications across documents, codebases, or directories. This helps avoid synchronization issues and data loss.
+                      . It allows you to quickly find modifications across
+                      documents, codebases, or directories. This helps avoid
+                      synchronization issues and data loss.
                     </p>
                   </div>
 
@@ -268,7 +297,8 @@ export default function CenterComponent({ type = "text" }) {
                       <span className="font-bold text-blue-700">
                         developers, IT professionals, and editors
                       </span>{" "}
-                      who need to check changes in configuration files, scripts, or text across versions.
+                      who need to check changes in configuration files, scripts,
+                      or text across versions.
                     </p>
                   </div>
 
@@ -279,7 +309,8 @@ export default function CenterComponent({ type = "text" }) {
                       <span className="font-bold text-blue-700">
                         detect renames, additions, and deletions
                       </span>
-                      , ensuring you never miss critical updates in your data or code repositories.
+                      , ensuring you never miss critical updates in your data or
+                      code repositories.
                     </p>
                   </div>
                 </>
