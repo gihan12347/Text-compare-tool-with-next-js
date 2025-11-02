@@ -31,25 +31,27 @@ export default function FeaturesSection({ type }) {
   return (
     <section 
       className="bg-gradient-to-br from-slate-50 via-cyan-50 to-blue-50 rounded-t-3xl p-6 md:p-8 lg:p-12 shadow-2xl text-center"
-      aria-labelledby="features-heading"
+      aria-label="Features section showing text comparison highlights"
     >
       <div className="max-w-5xl mx-auto mb-8 md:mb-12">
-        <h2 
-          id="features-heading" 
+        <div 
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 md:mb-6"
+          role="heading"
+          aria-level="2"
         >
           Powerful Text Comparison Features
-        </h2>
+        </div>
+
         <p className="text-slate-700 text-base md:text-lg lg:text-xl leading-relaxed px-2">
           Compare two {type} instantly with our{" "}
-          <strong className="text-slate-900 font-semibold">
+          <span className="text-slate-900 font-semibold">
             online text comparison and diff checker
-          </strong>
-          . Highlight differences, detect changes, and analyze edits with speed and precision. This tool is perfect for{" "}
-          <strong className="text-slate-900 font-semibold">
+          </span>
+          . Highlight differences, detect changes, and analyze edits quickly and precisely. This tool is perfect for{" "}
+          <span className="text-slate-900 font-semibold">
             developers, writers, editors, researchers, reviewers,
-          </strong>{" "}
-          and <strong className="text-slate-900 font-semibold">content creators</strong> who need a reliable, easy-to-use, and efficient solution for reviewing revisions, spotting subtle changes, and improving document quality.
+          </span>{" "}
+          and <span className="text-slate-900 font-semibold">content creators</span> who need a reliable, easy-to-use, and efficient solution for reviewing revisions, spotting subtle changes, and improving document quality.
         </p>
       </div>
 
@@ -73,9 +75,13 @@ export default function FeaturesSection({ type }) {
               </div>
             </div>
 
-            <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors duration-300">
+            <div
+              className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors duration-300"
+              role="heading"
+              aria-level="3"
+            >
               {feature.title}
-            </h3>
+            </div>
 
             <p className="text-slate-600 text-sm md:text-base leading-relaxed">
               {feature.description.split('<strong>').map((part, i) => {
@@ -83,7 +89,7 @@ export default function FeaturesSection({ type }) {
                 const [bold, rest] = part.split('</strong>');
                 return (
                   <React.Fragment key={i}>
-                    <strong className="text-slate-900 font-semibold">{bold}</strong>
+                    <span className="text-slate-900 font-semibold">{bold}</span>
                     {rest}
                   </React.Fragment>
                 );

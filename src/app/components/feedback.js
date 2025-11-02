@@ -26,26 +26,22 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
     {
       icon: Code,
       title: "Code Comparison",
-      description:
-        "Easily compare code snippets line by line, identify changes, and ensure consistency across versions.",
+      description: "Easily compare code snippets line by line, spot changes, and ensure consistency across versions."
     },
     {
       icon: Shield,
       title: "Quality Assurance",
-      description:
-        "Spot differences in documents or code and maintain content accuracy for professional projects.",
+      description: "Find differences in documents or code and keep content accurate for professional projects."
     },
     {
       icon: Zap,
       title: "Workflow Efficiency",
-      description:
-        "Save time during editing, debugging, or documentation reviews with instant visual diffs.",
+      description: "Save time during editing, debugging, or reviewing documents with instant visual diffs."
     },
     {
       icon: Target,
       title: "Precision Analysis",
-      description:
-        "Get character-level comparison accuracy ideal for developers, editors, and writers.",
+      description: "Achieve character-level comparison accuracy ideal for developers, editors, and writers."
     },
   ];
 
@@ -57,7 +53,7 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
     >
       <meta
         name="description"
-        content="Learn more about the developer behind Free Online Text Compare Tool — a simple and secure way to compare text and code online. Discover how this tool helps developers, writers, and editors improve their work."
+        content="Learn about the developer behind Free Online Text Compare Tool. This tool offers a fast and secure way to compare text and code online for writers, students, and developers."
       />
       <div className="max-w-7xl mx-auto">
 
@@ -73,7 +69,7 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
                 </h2>
               </div>
               <p className="text-cyan-100 mt-3 max-w-3xl mx-auto">
-                Building tools that simplify daily tasks for developers, writers, and digital professionals.
+                I build tools that make daily tasks easier for developers, writers, and digital professionals.
               </p>
             </header>
 
@@ -84,12 +80,12 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
                     <Briefcase className="w-6 h-6 text-cyan-600" /> A Developer with a Purpose
                   </h2>
                   <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-4">
-                    Hi, I’m a <strong className="text-slate-900">software engineer</strong> who built this tool to solve a real problem:
-                    finding an accurate, fast, and private way to compare text and code online without ads, trackers, or signup walls.
+                    Hi, I’m a <strong className="text-slate-900">software engineer</strong> who built this tool to tackle a real problem:
+                    finding a fast, accurate, and private way to compare text and code online without ads or signup walls.
                   </p>
                   <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-4">
-                    This website was created to help users compare <strong>text documents, essays, code snippets, and configuration files</strong> directly in their browser. 
-                    The goal is to provide a <strong>free, secure, and easy-to-use text comparison experience</strong> that works instantly for everyone.
+                    This website was made to help users compare <strong>text documents, essays, code snippets, and configuration files</strong> in their browser. 
+                    The aim is to provide a <strong>free, secure, and easy-to-use text comparison experience</strong> that works instantly for everyone.
                   </p>
                   <blockquote className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-5 border-l-4 border-cyan-600 italic text-slate-800 font-medium">
                     “Every tool I create focuses on simplicity, reliability, and real-world usefulness. This project is no exception.”
@@ -161,7 +157,7 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
 
             <div className="p-6 md:p-10 lg:p-12 text-center">
               <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
-                Your insights make a big difference. Whether you’re a developer, student, or content creator, your feedback helps shape future improvements.
+                Your insights matter. Whether you’re a developer, student, or content creator, your feedback helps shape future improvements.
               </p>
 
               {!feedbackSent ? (

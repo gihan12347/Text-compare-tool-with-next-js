@@ -8,8 +8,8 @@ export default function CenterComponent({ type = "text" }) {
     : "Online File Compare Tool. Find Differences Instantly";
 
   const subtitle = isText
-    ? "Compare two texts, documents, or files online. See the differences side-by-side."
-    : "Compare two files or folders online. See the differences side-by-side.";
+    ? "Compare two texts, documents, or files online. See the differences side by side."
+    : "Compare two files or folders online. See the differences side by side.";
 
   const description = isText
     ? "Our free text comparison tool makes it easy to check for duplication, plagiarism, or content changes in just one click."
@@ -39,22 +39,20 @@ export default function CenterComponent({ type = "text" }) {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-slate-50">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-cyan-100 via-blue-100 to-cyan-50 py-12 md:py-16 lg:py-20 relative overflow-hidden">
-        {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-300 rounded-full opacity-10 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full opacity-10 blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
         <div className="container mx-auto px-4 text-center max-w-5xl relative z-10">
           <div className="mb-6">
             <span className="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
-              100% Free &amp; Secure
+              100% Free & Secure
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+          <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             {title}
-          </h1>
+          </div>
 
           <p className="text-xl md:text-2xl text-slate-700 mb-4 font-medium">
             {subtitle}
@@ -64,7 +62,6 @@ export default function CenterComponent({ type = "text" }) {
             {description}
           </p>
 
-          {/* Feature Pills */}
           <div className="flex flex-wrap gap-3 justify-center mt-8">
             <div className="bg-white border-2 border-cyan-200 rounded-full px-6 py-3 flex items-center shadow-md hover:shadow-lg hover:border-cyan-400 transition-all duration-300 group">
               <Zap className="w-5 h-5 text-cyan-600 mr-2 group-hover:scale-110 transition-transform" />
@@ -88,10 +85,8 @@ export default function CenterComponent({ type = "text" }) {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="container mx-auto px-4 py-10 md:py-16">
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Introduction Card */}
           <article
             className="bg-white rounded-2xl shadow-xl border-2 border-cyan-100 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300"
             itemScope
@@ -101,9 +96,9 @@ export default function CenterComponent({ type = "text" }) {
               <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg p-3">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">
                 Welcome to Your Perfect Comparison Tool
-              </h2>
+              </div>
             </div>
 
             <p className="text-slate-700 text-base md:text-lg leading-relaxed">
@@ -112,7 +107,7 @@ export default function CenterComponent({ type = "text" }) {
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {introToolName}
               </span>{" "}
-              is designed to be fast, secure, and simple for anyone who needs to
+              is built to be fast, secure, and simple for anyone who needs to
               compare content. Just{" "}
               {isText
                 ? "paste your original text and modified text into the boxes"
@@ -126,7 +121,7 @@ export default function CenterComponent({ type = "text" }) {
               </span>{" "}
               works for essays, research papers, legal contracts, website
               content, source code, or any document where precision matters.
-              You&apos;ll be able to spot{" "}
+              You will spot{" "}
               <span className="font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded">
                 additions, removals, and changes
               </span>{" "}
@@ -135,11 +130,11 @@ export default function CenterComponent({ type = "text" }) {
               you navigate quickly through each change without endless
               scrolling. Whether you are a writer checking revisions, a student
               verifying originality, a developer comparing code, or a
-              professional reviewing essential documents, this{" "}
+              professional reviewing important documents, this{" "}
               <span className="font-bold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                 {freeToolName}
               </span>{" "}
-              makes sure you never miss even the smallest difference. Best of
+              ensures you never miss even the smallest difference. Best of
               all, it runs entirely in your browser with no downloads or
               registrations needed, making it a safe, private, and efficient
               solution for accurate{" "}
@@ -150,13 +145,12 @@ export default function CenterComponent({ type = "text" }) {
             </p>
           </article>
 
-          {/* Why Us Section */}
           <section className="bg-gradient-to-br from-white to-cyan-50 rounded-2xl shadow-xl border-2 border-cyan-100 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300">
             <div className="flex items-center gap-3 mb-6">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 w-2 h-12 rounded-full"></span>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">
                 {whyTitle}
-              </h2>
+              </div>
             </div>
 
             <div className="space-y-5">
@@ -165,7 +159,7 @@ export default function CenterComponent({ type = "text" }) {
                   <CheckCircle className="w-5 h-5 text-cyan-600" />
                 </div>
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed flex-1">
-                  Our {isText ? "online text compare tool" : "online file compare tool"} is made for{" "}
+                  Our {isText ? "online text compare tool" : "online file compare tool"} is designed for{" "}
                   <span className="font-bold text-cyan-700">
                     speed, security, and accuracy
                   </span>
@@ -215,13 +209,12 @@ export default function CenterComponent({ type = "text" }) {
             </div>
           </section>
 
-          {/* Why Necessary Section */}
-          <section className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl shadow-xl border-2 border-blue-100 p-8 md:p-10 hover:shadow-2xl transition-all duration-300">
+          <section className="bg-gradient-to-br from-cyan-50 to-white rounded-2xl shadow-xl border-2 border-blue-100 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300">
             <div className="flex items-center gap-3 mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 w-2 h-12 rounded-full"></span>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              <div className="text-2xl md:text-3xl font-bold text-slate-900">
                 {whyCompareTitle}
-              </h2>
+              </div>
             </div>
 
             <div className="space-y-5">
@@ -270,7 +263,7 @@ export default function CenterComponent({ type = "text" }) {
                         streamline editing workflows
                       </span>
                       . With our free online text diff checker, you can work
-                      faster, see changes clearly, and make sure your documents
+                      faster, see changes clearly, and ensure your documents
                       stay high-quality and trustworthy.
                     </p>
                   </div>
