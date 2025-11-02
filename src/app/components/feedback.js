@@ -53,7 +53,7 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
     >
       <meta
         name="description"
-        content="Learn about the developer behind Free Online Text Compare Tool. This tool offers a fast and secure way to compare text and code online for writers, students, and developers."
+        content="Learn about the developer behind the Free Online Text Compare Tool — a fast, secure way to compare text and code online for writers, students, and developers."
       />
       <div className="max-w-7xl mx-auto">
 

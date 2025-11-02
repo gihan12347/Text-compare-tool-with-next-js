@@ -57,9 +57,9 @@ export default function HowToUseTextCompare() {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <header className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             How to Use the Free Online Text Compare Tool
-          </h2>
+          </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Compare two texts instantly and see the differences with color-coded highlights. This tool is great for spotting changes, revisions, and updates in any document.
           </p>
