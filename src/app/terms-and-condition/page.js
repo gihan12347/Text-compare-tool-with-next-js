@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import NavigationBar from "../components/navbar.js";
+import SubNavBar from '../components/sub-navbar.js';
 import Footer from "../components/footer.js";
 import TermsAndConditions from "../components/terms-and-condition-component.js";
 
@@ -10,6 +11,7 @@ export default function TextCompare() {
   return (
     <>
       <NavigationBar selectedType="" />
+      <SubNavBar />
       <TermsAndConditions/>
       <div
         ref={bottomRef}
