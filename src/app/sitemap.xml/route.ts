@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const baseUrl = "https://freeonlinetextcomparetool.com"; 
 
-  const pages = ["", "compare-file","compare-images", "about", "feedback", "privacy-policy"];
+  const pages = ["", "compare-file","compare-images", "about", "feedback", "privacy-policy", "terms-and-condition", "contact-us", "faq", "add-review", "how-to-use-file-compare", "how-to-use-file-compare", "key-features"];
 
   const urls = pages
     .map(
