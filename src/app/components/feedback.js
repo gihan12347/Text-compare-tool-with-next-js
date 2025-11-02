@@ -51,10 +51,6 @@ export default function AboutAndFeedback({ facebookPageUrl = "https://www.facebo
       itemScope
       itemType="https://schema.org/AboutPage"
     >
-      <meta
-        name="description"
-        content="Learn about the developer behind the Free Online Text Compare Tool — a fast, secure way to compare text and code online for writers, students, and developers."
-      />
       <div className="max-w-7xl mx-auto">
 
         {/* About the Developer */}
