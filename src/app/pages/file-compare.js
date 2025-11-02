@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import NavigationBar from "../components/navbar.js";
+import SubNavBar from '../components/sub-navbar.js';
 import Footer from "../components/footer.js";
 import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file-compare.js";
 import FeaturesSection from "../components/feature-section.js";
@@ -14,6 +15,7 @@ export default function FileCompare() {
   return (
     <>
       <NavigationBar selectedType="file" />
+      <SubNavBar />
       <ImprovedTextareaUIForFile></ImprovedTextareaUIForFile>
       <HowToUseFileCompare />
       <FeaturesSection type="files" />

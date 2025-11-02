@@ -10,6 +10,7 @@ export default function TextCompare() {
   return (
     <>
       <NavigationBar selectedType="" />
+      <SubNavBar />
       <PrivacyPolicy/>
       <div
         ref={bottomRef}

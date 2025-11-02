@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import NavigationBar from '../components/navbar.js';
+import SubNavBar from '../components/sub-navbar.js';
 import Footer from '../components/footer.js';
 import ImprovedTextareaUI from '../components/improved-text-area.js';
 import FeaturesSection from '../components/feature-section.js';
@@ -15,6 +16,7 @@ export default function TextCompare() {
   return (
     <>
       <NavigationBar selectedType="text" />
+      <SubNavBar />
       <ImprovedTextareaUI />
       <HowToUseTextCompare />
       <FeaturesSection type="texts" />
