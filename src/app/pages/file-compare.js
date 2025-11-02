@@ -7,6 +7,7 @@ import ImprovedTextareaUIForFile from "../components/improved-text-area-for-file
 import FeaturesSection from "../components/feature-section.js";
 import CenterComponent from '../components/center-component.js';
 import Feedback from '../components/feedback.js';
+import HowToUseFileCompare from '../components/how-to-use-file-compare-tool.js';
 
 export default function FileCompare() {
   const bottomRef = useRef(null);
@@ -14,6 +15,7 @@ export default function FileCompare() {
     <>
       <NavigationBar selectedType="file" />
       <ImprovedTextareaUIForFile></ImprovedTextareaUIForFile>
+      <HowToUseFileCompare />
       <FeaturesSection type="files" />
       <CenterComponent type="file"/>
       <Feedback />
