@@ -18,6 +18,8 @@ export async function GET() {
     "how-to-use-file-compare",
     "key-features",
     "not-found",
+    "about-developer",
+    "key-benifits",
   ];
 
   const urls = pages
