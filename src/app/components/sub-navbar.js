@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { BookOpen, Info, FileText, ChevronDown, Star, Sparkles, Upload, HelpCircle } from 'lucide-react';
+import { BookOpen, Info, FileText, ChevronDown, Star, Sparkles, Upload, HelpCircle, Key, Image } from 'lucide-react';
 
 export default function SubNavbar() {
   const pathname = usePathname();
@@ -13,19 +13,31 @@ export default function SubNavbar() {
   const navLinks = [
     { 
       href: '/how-to-use-text-compare', 
-      label: 'How to Use Text Compare', 
+      label: 'Text Compare Guide', 
       icon: BookOpen,
       description: 'Learn how to use the text compare tool'
     },
     { 
       href: '/how-to-use-file-compare', 
-      label: 'How to Use File Compare', 
+      label: 'File Compare Guide', 
       icon: Upload,
       description: 'Learn how to compare files'
     },
     { 
+      href: '/how-to-use-jwt-decoreder', 
+      label: 'JWT Decoder Guide', 
+      icon: Key,
+      description: 'Learn how to jwt decode tokens'
+    },
+    { 
+      href: '/how-to-use-image-compare', 
+      label: 'Image Compare Guide', 
+      icon: Image,
+      description: 'Learn how to comare images'
+    },
+    { 
       href: '/key-features', 
-      label: 'Key Features', 
+      label: 'Features', 
       icon: Sparkles,
       description: 'Explore all the powerful features'
     },
@@ -37,7 +49,7 @@ export default function SubNavbar() {
     },
     { 
       href: '/add-review', 
-      label: 'Add Your Review', 
+      label: 'Reviews', 
       icon: Star,
       description: 'Share your experience with us'
     }

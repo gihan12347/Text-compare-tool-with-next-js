@@ -20,7 +20,10 @@ export async function GET() {
     "not-found",
     "about-developer",
     "key-benifits",
-    "jwt-decode"
+    "jwt-decode",
+    "how-to-use-jwt-decoreder",
+    "how-to-use-text-compare",
+    "how-to-use-image-compare",
   ];
 
   const urls = pages
