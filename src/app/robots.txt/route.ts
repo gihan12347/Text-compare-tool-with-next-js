@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const content = `User-agent: *
+Allow: /
 Sitemap: https://freeonlinetextcomparetool.com/sitemap.xml
 `;
 
