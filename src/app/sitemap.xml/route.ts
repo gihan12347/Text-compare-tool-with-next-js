@@ -24,6 +24,7 @@ export async function GET() {
     "how-to-use-jwt-decoreder",
     "how-to-use-text-compare",
     "how-to-use-image-compare",
+    "all-demos"
   ];
 
   const urls = pages
