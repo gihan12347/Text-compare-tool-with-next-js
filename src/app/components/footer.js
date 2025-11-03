@@ -231,8 +231,10 @@ const Footer = () => {
                   { href: "/about", label: "About Us" },
                   { href: "/feedback", label: "Feedback" },
                   { href: "/privacy-policy", label: "Privacy Policy" },
-                  { href: "/terms-and-conditions", label: "Terms & Conditions" },
-                  { href: "/contact-us", label: "Contact Us" }
+                  { href: "/terms-and-conditions", label: "Terms" },
+                  { href: "/contact-us", label: "Contact Us" },
+                  { href: "/about-developer", label: "About Developer" },
+                  { href: "/key-benifits", label: "Benifits" }
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link
