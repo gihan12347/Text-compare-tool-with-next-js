@@ -7,8 +7,6 @@ Sitemap: https://freeonlinetextcomparetool.com/sitemap.xml
 `;
 
   return new NextResponse(content, {
-    headers: {
-      "Content-Type": "text/plain",
-    },
+    headers: { "Content-Type": "text/plain" },
   });
 }

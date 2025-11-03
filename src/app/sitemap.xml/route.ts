@@ -1,20 +1,35 @@
+// app/sitemap.xml/route.js
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://freeonlinetextcomparetool.com"; 
+  const baseUrl = "https://freeonlinetextcomparetool.com";
 
-  const pages = ["", "compare-file","compare-images", "about", "feedback", "privacy-policy", "terms-and-conditions", "contact-us", "faq", "add-review", "how-to-use-file-compare", "how-to-use-file-compare", "key-features", "not-found"];
+  const pages = [
+    "",
+    "compare-file",
+    "compare-images",
+    "about",
+    "feedback",
+    "privacy-policy",
+    "terms-and-conditions",
+    "contact-us",
+    "faq",
+    "add-review",
+    "how-to-use-file-compare",
+    "key-features",
+    "not-found",
+  ];
 
   const urls = pages
-    .map(
-      (page) => `
-    <url>
-      <loc>${baseUrl}/${page}</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  `
-    )
+    .map((page) => {
+      const path = page ? `/${page}` : "";
+      return `
+        <url>
+          <loc>${baseUrl}${path}</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>`;
+    })
     .join("");
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -22,7 +37,7 @@ export async function GET() {
     ${urls}
   </urlset>`;
 
-  return new NextResponse(sitemap, {
+  return new NextResponse(sitemap.trim(), {
     headers: {
       "Content-Type": "application/xml",
     },
