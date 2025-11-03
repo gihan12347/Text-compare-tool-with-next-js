@@ -234,7 +234,7 @@ const Footer = () => {
                   { href: "/terms-and-conditions", label: "Terms" },
                   { href: "/contact-us", label: "Contact Us" },
                   { href: "/about-developer", label: "About Developer" },
-                  { href: "/key-benifits", label: "Benifits" },
+                  { href: "/key-benefits", label: "benefits" },
                   { href: "/all-demos", label: "All Demos" },
                   { href: "/tool-version", label: "Tool Version" }
                 ].map((link, idx) => (
