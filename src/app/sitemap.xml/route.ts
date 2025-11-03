@@ -20,6 +20,7 @@ export async function GET() {
     "not-found",
     "about-developer",
     "key-benifits",
+    "jwt-decode"
   ];
 
   const urls = pages

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FileText, Upload, Image, Menu, X } from "lucide-react";
+import { FileText, Upload, Image, Menu, X, Key } from "lucide-react";
 import Link from "next/link";
 
 export const AcmeLogo = () => {
@@ -51,6 +51,13 @@ const NavigationBar = ({ selectedType }) => {
       description: "Spot differences between two images instantly.",
       href: "/compare-images",
     },
+    {
+      id: "jwtDcode",
+      label: "JWT Token Decode",
+      icon: Key,
+      description: "Spot compress data in your key",
+      href: "/jwt-decode",
+    }
   ];
 
   return (
