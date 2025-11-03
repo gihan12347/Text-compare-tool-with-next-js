@@ -22,7 +22,7 @@ export default function HowToUseJWTDecoder() {
     {
       number: 3,
       title: "Click Decode Button",
-      description: "Click the 'Decode' button to extract and display the header and payload information from your JWT token.",
+      description: "Click the &apos;Decode&apos; button to extract and display the header and payload information from your JWT token.",
       icon: Lock,
       detail: "Our decoder instantly parses the token and presents the data in a readable JSON format without validating the signature."
     },
@@ -240,7 +240,7 @@ export default function HowToUseJWTDecoder() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>Check the expiration (exp) claim to ensure tokens haven't expired</span>
+                    <span>Check the expiration (exp) claim to ensure tokens haven&apos;t expired</span>
                   </li>
                 </ul>
               </div>

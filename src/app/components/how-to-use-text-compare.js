@@ -29,7 +29,7 @@ export default function HowToUseTextCompare() {
     {
       number: 4,
       title: "Click Compare Button",
-      description: "Click the 'Compare' button to check the differences. The tool will highlight all changes between your texts right away.",
+      description: "Click the &apos;Compare&apos; button to check the differences. The tool will highlight all changes between your texts right away.",
       icon: Search,
       detail: "Our smart algorithm processes both texts and finds every addition, deletion, and modification in seconds."
     }
