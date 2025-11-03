@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://freeonlinetextcomparetool.com/sitemap.xml
