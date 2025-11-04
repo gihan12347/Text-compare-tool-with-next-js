@@ -122,9 +122,13 @@ export default function JWTDecoderComponent() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-800 mb-2">
-            JWT Token Decoder
-          </h1>
+          <div
+            role="heading"
+            aria-level="1"
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          >
+          JWT Token Decoder
+          </div>
           <p className="text-slate-600">
             Decode and inspect JWT tokens instantly
           </p>
