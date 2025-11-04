@@ -8,7 +8,7 @@ export default function HowToUseJWTDecoder() {
     {
       number: 1,
       title: "Copy Your JWT Token",
-      description: "Get the JWT token from your application, API response, or authentication system. It usually starts with 'eyJ...'",
+      description: "Get the JWT token from your application, API response, or authentication system. It usually starts with &apos;eyJ...&apos;",
       icon: Key,
       detail: "JWT tokens are typically found in HTTP headers (Authorization: Bearer), cookies, or local storage in web apps."
     },
@@ -22,7 +22,7 @@ export default function HowToUseJWTDecoder() {
     {
       number: 3,
       title: "Click Decode Button",
-      description: "Click the 'Decode' button to extract and show the header and payload information from your JWT token.",
+      description: "Click the &apos;Decode&apos; button to extract and show the header and payload information from your JWT token.",
       icon: Lock,
       detail: "Our decoder quickly parses the token and displays the data in a readable JSON format without validating the signature."
     },
@@ -268,7 +268,7 @@ export default function HowToUseJWTDecoder() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>Check the expiration (exp) claim to ensure tokens haven't expired.</span>
+                    <span>Check the expiration (exp) claim to ensure tokens haven&apos;t expired.</span>
                   </li>
                 </ul>
               </div>
