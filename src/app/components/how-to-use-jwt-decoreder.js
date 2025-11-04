@@ -8,30 +8,30 @@ export default function HowToUseJWTDecoder() {
     {
       number: 1,
       title: "Copy Your JWT Token",
-      description: "Get the JWT token from your application, API response, or authentication system. It typically starts with 'eyJ...'",
+      description: "Get the JWT token from your application, API response, or authentication system. It usually starts with 'eyJ...'",
       icon: Key,
-      detail: "JWT tokens are usually found in HTTP headers (Authorization: Bearer), cookies, or local storage in web applications."
+      detail: "JWT tokens are typically found in HTTP headers (Authorization: Bearer), cookies, or local storage in web apps."
     },
     {
       number: 2,
       title: "Paste the Token",
-      description: "Paste your JWT token into the text area. The token should be a long string with three parts separated by dots.",
+      description: "Paste your JWT token into the text area. The token should be a long string divided into three parts by dots.",
       icon: Copy,
       detail: "A valid JWT has three sections: Header.Payload.Signature, each encoded in Base64URL format."
     },
     {
       number: 3,
       title: "Click Decode Button",
-      description: "Click the &apos;Decode&apos; button to extract and display the header and payload information from your JWT token.",
+      description: "Click the 'Decode' button to extract and show the header and payload information from your JWT token.",
       icon: Lock,
-      detail: "Our decoder instantly parses the token and presents the data in a readable JSON format without validating the signature."
+      detail: "Our decoder quickly parses the token and displays the data in a readable JSON format without validating the signature."
     },
     {
       number: 4,
       title: "Review Decoded Data",
-      description: "Examine the header (algorithm and token type) and payload (claims, expiration, user data) sections.",
+      description: "Check the header (algorithm and token type) and payload (claims, expiration, user data) sections.",
       icon: CheckCircle,
-      detail: "You can copy individual sections for further analysis or debugging. Look for expiration times, user IDs, and permissions."
+      detail: "You can copy individual sections for further examination or debugging. Look for expiration times, user IDs, and permissions."
     }
   ];
 
@@ -83,10 +83,38 @@ export default function HowToUseJWTDecoder() {
             How to Use the JWT Token Decoder
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Decode JSON Web Tokens (JWT) instantly to view header and payload information. 
-            Perfect for debugging authentication, inspecting claims, and understanding token structure.
+            Decode JSON Web Tokens (JWT) quickly to view header and payload information. 
+            Great for debugging authentication, inspecting claims, and understanding token structure.
           </p>
         </header>
+
+        {/* Demo Video Section */}
+        <section className="mb-16">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-cyan-100">
+            <div className="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-4">
+              <p className="text-2xl font-bold text-white flex items-center gap-3">
+                <Play className="w-7 h-7" />
+                Watch Demo Video
+              </p>
+            </div>
+            <div className="p-8">
+              <div className="relative bg-slate-900 rounded-xl overflow-hidden">
+                <video
+                  className="w-full h-auto rounded-lg"
+                  src="vedio/jwt-token-decode-demo.mp4"
+                  title="JWT Token Decode Demo"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Step-by-Step Guide */}
         <section className="mb-16">
@@ -143,7 +171,7 @@ export default function HowToUseJWTDecoder() {
             </div>
             <div className="p-8">
               <p className="text-slate-600 mb-8 text-lg">
-                A JWT token consists of three parts separated by dots (.). Each part serves a specific purpose:
+                A JWT token has three parts separated by dots (.). Each part serves a specific purpose:
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 {sections.map((section) => {
@@ -189,7 +217,7 @@ export default function HowToUseJWTDecoder() {
             </div>
             <div className="p-8">
               <p className="text-slate-600 mb-6 text-lg">
-                JWT payloads typically contain these standard claims:
+                JWT payloads usually include these standard claims:
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {commonClaims.map((claim) => (
@@ -224,23 +252,23 @@ export default function HowToUseJWTDecoder() {
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>This tool only <strong>decodes</strong> JWT tokens - it does not <strong>validate</strong> signatures</span>
+                    <span>This tool only <strong>decodes</strong> JWT tokens - it does not <strong>validate</strong> signatures.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>Never share tokens containing sensitive or production data</span>
+                    <span>Never share tokens with sensitive or production data.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>JWTs are encoded, not encrypted - anyone can decode and read the contents</span>
+                    <span>JWTs are encoded, not encrypted - anyone can decode and read the contents.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>Always verify tokens on your server before trusting their contents</span>
+                    <span>Always verify tokens on your server before trusting their contents.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-600 font-bold">•</span>
-                    <span>Check the expiration (exp) claim to ensure tokens haven&apos;t expired</span>
+                    <span>Check the expiration (exp) claim to ensure tokens haven't expired.</span>
                   </li>
                 </ul>
               </div>
