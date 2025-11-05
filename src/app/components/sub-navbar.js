@@ -1,10 +1,9 @@
-// components/SubNavbar.jsx
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { BookOpen, Info, FileText, ChevronDown, Star, Sparkles, Upload, HelpCircle, Key, Image } from 'lucide-react';
+import { BookOpen, ChevronDown, Star, Sparkles, Upload, HelpCircle, Key, Image } from 'lucide-react';
 
 export default function SubNavbar() {
   const pathname = usePathname();
@@ -13,27 +12,27 @@ export default function SubNavbar() {
   const navLinks = [
     { 
       href: '/how-to-use-text-compare', 
-      label: 'Text Compare Guide', 
+      label: 'Text Compare', 
       icon: BookOpen,
       description: 'Learn how to use the text compare tool'
     },
     { 
       href: '/how-to-use-file-compare', 
-      label: 'File Compare Guide', 
+      label: 'File Compare', 
       icon: Upload,
       description: 'Learn how to compare files'
     },
     { 
-      href: '/how-to-use-jwt-decoreder', 
-      label: 'JWT Decoder Guide', 
+      href: '/how-to-use-jwt-decoder', 
+      label: 'JWT Decoder', 
       icon: Key,
-      description: 'Learn how to jwt decode tokens'
+      description: 'Learn how to decode JWT tokens'
     },
     { 
       href: '/how-to-use-image-compare', 
-      label: 'Image Compare Guide', 
+      label: 'Image Compare', 
       icon: Image,
-      description: 'Learn how to comare images'
+      description: 'Learn how to compare images'
     },
     { 
       href: '/key-features', 
@@ -58,56 +57,85 @@ export default function SubNavbar() {
   const isActive = (path) => pathname === path;
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-gray-800/50 sticky top-16 z-40 backdrop-blur-sm">
+    <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-gray-800/50 sticky top-16 z-40 backdrop-blur-sm shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center py-3">
-          <div className="flex items-center space-x-2">
-            {navLinks.map((link, index) => {
+        <div className="hidden md:flex items-center justify-center py-4">
+          <nav className="flex items-center gap-1" role="navigation" aria-label="Sub navigation">
+            {navLinks.map((link) => {
               const Icon = link.icon;
               const active = isActive(link.href);
               
               return (
-                <div key={link.href} className="flex items-center">
-                  <Link
-                    href={link.href}
-                    title={link.description}
-                    className={`
-                      group relative flex items-center gap-2 px-5 py-2.5 rounded-lg
-                      font-medium text-sm transition-all duration-300 ease-in-out
-                      ${
-                        active
-                          ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-500/30'
-                          : 'text-gray-400 hover:text-cyan-400 hover:bg-gray-800/50'
-                      }
-                    `}
-                  >
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`
+                    group relative flex items-center gap-2.5 px-4 py-3 rounded-xl
+                    font-medium text-sm transition-all duration-300 ease-out
+                    hover:scale-105 active:scale-95
+                    ${
+                      active
+                        ? 'bg-gradient-to-br from-cyan-500/25 via-blue-500/20 to-cyan-500/25 text-cyan-400 shadow-lg shadow-cyan-500/20'
+                        : 'text-gray-400 hover:text-white hover:bg-gray-800/60'
+                    }
+                  `}
+                >
+                  {/* Icon with updated styling */}
+                  <div className={`
+                    p-1.5 rounded-lg transition-all duration-300
+                    ${active 
+                      ? 'bg-cyan-500/20 shadow-inner' 
+                      : 'bg-gray-800/50 group-hover:bg-cyan-500/10'
+                    }
+                  `}>
                     <Icon className={`w-4 h-4 transition-all duration-300 ${
-                      active ? 'text-cyan-400' : 'text-gray-500 group-hover:text-cyan-400'
+                      active 
+                        ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]' 
+                        : 'text-gray-500 group-hover:text-cyan-400'
                     }`} />
-                    <span>{link.label}</span>
-                    
-                    {/* Active indicator */}
-                    {active && (
-                      <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
-                    )}
-                    
-                    {/* Hover glow effect */}
-                    <span className={`
-                      absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/0 to-blue-500/0
-                      group-hover:from-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-300
-                      ${active ? 'opacity-100' : 'opacity-0'}
-                    `} />
-                  </Link>
+                  </div>
                   
-                  {/* Separator */}
-                  {index < navLinks.length - 1 && (
-                    <div className="h-6 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent mx-2" />
+                  <span className="relative">
+                    {link.label}
+                    {/* Underline effect on hover */}
+                    <span className={`
+                      absolute -bottom-0.5 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 
+                      transition-all duration-300 rounded-full
+                      ${active ? 'w-full' : 'w-0 group-hover:w-full'}
+                    `} />
+                  </span>
+                  
+                  {/* Active indicator dot */}
+                  {active && (
+                    <span className="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                   )}
-                </div>
+                  
+                  {/* Tooltip on hover */}
+                  <span className={`
+                    absolute -bottom-12 left-1/2 transform -translate-x-1/2 
+                    px-3 py-1.5 bg-gray-900 text-gray-300 text-xs rounded-lg
+                    border border-gray-700 shadow-xl whitespace-nowrap
+                    opacity-0 group-hover:opacity-100 pointer-events-none
+                    transition-all duration-300 z-50
+                    before:content-[''] before:absolute before:-top-1 before:left-1/2 
+                    before:transform before:-translate-x-1/2 before:border-4 
+                    before:border-transparent before:border-b-gray-900
+                  `}>
+                    {link.description}
+                  </span>
+                  
+                  {/* Glow effect */}
+                  <span className={`
+                    absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500/0 via-blue-500/0 to-cyan-500/0
+                    group-hover:from-cyan-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 
+                    transition-all duration-500 blur-sm
+                    ${active ? 'opacity-100' : 'opacity-0'}
+                  `} />
+                </Link>
               );
             })}
-          </div>
+          </nav>
         </div>
 
         {/* Mobile Navigation */}
@@ -117,6 +145,7 @@ export default function SubNavbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="flex items-center justify-between w-full py-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
             aria-label="Toggle sub navigation menu"
+            aria-expanded={isMenuOpen}
           >
             <span className="flex items-center gap-2 text-sm font-medium">
               <BookOpen className="w-4 h-4" />
@@ -133,7 +162,7 @@ export default function SubNavbar() {
           <div
             className={`
               overflow-hidden transition-all duration-300 ease-in-out
-              ${isMenuOpen ? 'max-h-64 opacity-100 mb-3' : 'max-h-0 opacity-0'}
+              ${isMenuOpen ? 'max-h-[500px] opacity-100 mb-3' : 'max-h-0 opacity-0'}
             `}
           >
             <div className="space-y-1 pt-2">
@@ -169,8 +198,10 @@ export default function SubNavbar() {
         </div>
       </div>
 
-      {/* Bottom gradient line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+      {/* Bottom gradient line with animation */}
+      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent">
+        <div className="h-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse" />
+      </div>
     </div>
   );
 }

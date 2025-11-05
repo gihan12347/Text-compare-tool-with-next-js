@@ -4,7 +4,7 @@ import { useRef } from "react";
 import NavigationBar from "../components/navbar.js";
 import SubNavBar from '../components/sub-navbar.js';
 import Footer from "../components/footer.js";
-import FAQ from "../components/center-component.js";
+import FAQ from "../components/faq-component.js";
 
 export default function TextCompare() {
   const bottomRef = useRef(null);
