@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/compare-file/',
+        destination: '/compare-file',
+        permanent: true,
+      },
     ];
   },
 };

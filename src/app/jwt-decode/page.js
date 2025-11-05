@@ -16,6 +16,9 @@ export const metadata = {
     "free JWT tool",
     "online JWT decode and verify",
   ],
+  alternates: {
+    canonical: "https://freeonlinetextcomparetool.com/jwt-decode",
+  },
   openGraph: {
     title: "JWT Token Decoder - Free Online JSON Web Token Tool",
     description:
