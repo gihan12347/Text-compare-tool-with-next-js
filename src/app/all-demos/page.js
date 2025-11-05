@@ -7,7 +7,7 @@ import Footer from "../components/footer.js";
 import HowToUseTextCompare from "../components/how-to-use-text-compare.js";
 import HowToUseFileCompare from "../components/how-to-use-file-compare-tool.js";
 import HowToUseImageCompare from "../components/how-to-use-image-compare.js";
-import HowToUseJwtDecoder from "../components/how-to-use-jwt-decoreder.js";
+import HowToUseJwtDecoder from "../components/how-to-use-jwt-decorder.js";
 
 export default function TextCompare() {
   const bottomRef = useRef(null);

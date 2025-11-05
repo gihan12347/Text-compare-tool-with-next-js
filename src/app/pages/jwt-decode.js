@@ -7,7 +7,7 @@ import Footer from "../components/footer.js";
 import FeaturesSection from "../components/jwt-features-section.js";
 import Feedback from '../components/feedback.js';
 import JWTDecoderComponent from "../components/jwt-decode-component.js";
-import HowToUseJWTDecoder from '../components/how-to-use-jwt-decoreder.js';
+import HowToUseJWTDecoder from '../components/how-to-use-jwt-decorder.js';
 
 export default function JWTDecoderPage() {
   const bottomRef = useRef(null);
