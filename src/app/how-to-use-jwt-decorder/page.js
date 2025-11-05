@@ -4,7 +4,7 @@ import { useRef } from "react";
 import NavigationBar from "../components/navbar.js";
 import SubNavBar from '../components/sub-navbar.js';
 import Footer from "../components/footer.js";
-import HowToUseJwtDecoreder from "../components/how-to-use-jwt-decoreder.js";
+import HowToUseJwtDecoreder from "../components/how-to-use-jwt-decorder.js";
 
 export default function TextCompare() {
   const bottomRef = useRef(null);

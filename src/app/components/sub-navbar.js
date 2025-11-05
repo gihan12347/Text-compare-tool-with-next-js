@@ -23,7 +23,7 @@ export default function SubNavbar() {
       description: 'Learn how to compare files'
     },
     { 
-      href: '/how-to-use-jwt-decoder', 
+      href: '/how-to-use-jwt-decorder', 
       label: 'JWT Decoder', 
       icon: Key,
       description: 'Learn how to decode JWT tokens'
